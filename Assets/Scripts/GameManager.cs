@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour
     {
         Normal,
         Placing,
-        Upgrading,
-        Rolling
+        Upgrading
     }
 
     public static GameManager Instance;
@@ -34,6 +33,44 @@ public class GameManager : MonoBehaviour
         Instance = this;
         _state = GameState.Normal;
         StartCoroutine(ProduceDice());
+    }
+
+    public void MakeUnit(DieRoller dieToRoll)
+    {
+        StartCoroutine(MakeUnitAnim(dieToRoll));
+    }
+    public void UpgradeUnit(DieRoller dieToRoll)
+    {
+        StartCoroutine(UpgradeUnitAnim(dieToRoll));
+    }
+    
+    private IEnumerator MakeUnitAnim(DieRoller dieToRoll)
+    {
+        // Immediately roll glyph die
+        dieToRoll.Throw();
+        Rigidbody dieRb = dieToRoll.GetComponent<Rigidbody>();
+        yield return new WaitForSeconds(0.25f); // Buffer for velocity
+        yield return new WaitUntil(() => dieRb.velocity.magnitude <= 0.1f && dieRb.angularVelocity.magnitude <= 0.1f);
+        
+        // Switch to place mode
+        _state = GameState.Placing;
+        // Wait until player places unit
+        // Return to normal
+        _state = GameState.Normal;
+        yield break;
+    }
+
+    private IEnumerator UpgradeUnitAnim(DieRoller dieToRoll)
+    {
+        // Switch to upgrade mode
+        _state = GameState.Upgrading;
+        // Wait until player selects unit
+        // Roll standard die
+        dieToRoll.Throw();
+        // Play upgrade animation
+        // Return to normal
+        _state = GameState.Normal;
+        yield break;
     }
 
     private IEnumerator ProduceDice()

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,6 +5,7 @@ public class DieRoller : MonoBehaviour
 {
     [SerializeField] private float spinSpeed = 1f;
     [SerializeField] private float dieLaunchMultiplier = 100f;
+    [SerializeField] private LayerMask floorMask;
 
     private Rigidbody _rigidbody;
     private bool _spinning;
@@ -33,8 +33,8 @@ public class DieRoller : MonoBehaviour
         Vector3 randDir = Random.insideUnitCircle.normalized;
         randDir = new Vector3(-Mathf.Abs(randDir.x), Mathf.Abs(randDir.y));
         
-        _rigidbody.AddForceAtPosition(randDir * Random.Range(dieLaunchMultiplier * 0.75f, dieLaunchMultiplier),
-            transform.position + Random.onUnitSphere * 0.75f, 
+        _rigidbody.AddForceAtPosition(randDir * Random.Range(dieLaunchMultiplier, dieLaunchMultiplier),
+            transform.position + Vector3.back * 0.75f, 
             ForceMode.Impulse);
     }
 
@@ -44,5 +44,10 @@ public class DieRoller : MonoBehaviour
         transform.rotation = Quaternion.identity;
         _rigidbody.useGravity = false;
         _rigidbody.isKinematic = true;
+    }
+
+    public void GetDieSide()
+    {
+        
     }
 }
