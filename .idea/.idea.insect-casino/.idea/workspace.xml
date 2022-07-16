@@ -20,20 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ee4ba30-edc7-44f1-a4d2-fcab2162978a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/1CardTower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/1CardTower.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/2ExplodingAnt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/2ExplodingAnt.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/3ShooterWorm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/3ShooterWorm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/4GoopSnail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/4GoopSnail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/5Honeybee.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/5Honeybee.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/6Spider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/6Spider.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cursor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cursor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/CardTower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/CardTower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,12 +57,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/ExplodingAnt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameGrid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Cursor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/CardTower.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameGrid.cs" />
       </list>
     </option>
   </component>
@@ -115,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657929910868</updated>
       <workItem from="1657929915738" duration="22300000" />
-      <workItem from="1657985288337" duration="7117000" />
+      <workItem from="1657985288337" duration="9690000" />
     </task>
     <servers />
   </component>
@@ -176,5 +168,24 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1657994851194" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GameGrid.cs</url>
+          <line>87</line>
+          <properties documentPath="D:\Jaden\Games\Unity\insect-casino\Assets\Scripts\GameGrid.cs" initialLine="87">
+            <startOffsets>
+              <option value="2073" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2101" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

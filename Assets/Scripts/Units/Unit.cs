@@ -51,16 +51,43 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public void ShowHideStrength()
+    public void ShowStrength()
     {
-        StartCoroutine(ShowStrength());
+        StartCoroutine(ShowStrengthAnim());
     }
 
-    private IEnumerator ShowStrength()
+    private IEnumerator ShowStrengthAnim()
     {
         _strengthText.text = $"{_strength}/7";
         _strengthCanvas.SetActive(true);
+        yield return new WaitUntil(() => GameManager.Instance.State != GameManager.GameState.Upgrading);
         yield return new WaitForEndOfFrame();
         _strengthCanvas.SetActive(false);
+    }
+
+    public void AddStrength(int strengthToAdd)
+    {
+        StartCoroutine(AddStrengthAnim(strengthToAdd));
+    }
+
+    private IEnumerator AddStrengthAnim(int strengthToAdd)
+    {
+        _strength += strengthToAdd;
+
+        if (_strength > 7)
+        {
+            // BUST!
+            StartCoroutine(Die());
+        }
+        
+        yield break; // TODO: Add anim
+    }
+
+    private IEnumerator Die()
+    {
+        // TODO: Add anim
+        GameManager.Instance.GameGrid.RemoveUnit(this);
+        Destroy(gameObject);
+        yield break;
     }
 }

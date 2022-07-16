@@ -1082,6 +1082,38 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1019463245}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpgradeUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1564755886}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: DieRoller, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
 --- !u!224 &555837717 stripped
@@ -1567,6 +1599,38 @@ PrefabInstance:
     - target: {fileID: 6277928791197654777, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1019463245}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpgradeUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1458372285}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: DieRoller, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
@@ -2555,6 +2619,38 @@ PrefabInstance:
     - target: {fileID: 6277928791197654777, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1019463245}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpgradeUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1847816369}
+    - target: {fileID: 8619173130957319523, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: DieRoller, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80d6a9f7cc77d5c45816718f5c656cbb, type: 3}

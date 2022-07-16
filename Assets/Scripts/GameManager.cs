@@ -46,6 +46,13 @@ public class GameManager : MonoBehaviour
         set => _dieReady = value;
     }
 
+    private Unit _unitToUpgrade;
+    public Unit UnitToUpgrade
+    {
+        get => _unitToUpgrade;
+        set => _unitToUpgrade = value;
+    }
+    
     private float _productionPercentage;
     public float ProductionPercentage => _productionPercentage;
 
@@ -95,15 +102,27 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator UpgradeUnitAnim(DieRoller dieToRoll)
     {
-        // Switch to upgrade mode
         _state = GameState.Upgrading;
-        // Wait until player selects unit
-        // Roll standard die
+        foreach (Unit unit in gameGrid.GetAllUnits())
+        {
+            unit.ShowStrength();
+        }
+        
+        yield return new WaitUntil(() => UnitToUpgrade != null);
+        
         dieToRoll.Throw();
-        // Play upgrade animation
-        // Return to normal
+        Rigidbody dieRb = dieToRoll.GetComponent<Rigidbody>();
+        yield return new WaitForSeconds(0.25f); // Buffer for velocity
+        yield return new WaitUntil(() => dieRb.velocity.magnitude <= float.Epsilon && dieRb.angularVelocity.magnitude <= float.Epsilon);
+        int extraStrength = dieToRoll.GetDieSide();
+        _unitToUpgrade.AddStrength(extraStrength);
+        
+        dieToRoll.Spin();
+        dieToRoll.SetSpawned(false);
+        dieToRoll.transform.parent.gameObject.SetActive(false);
+        
+        _unitToUpgrade = null;
         _state = GameState.Normal;
-        yield break;
     }
 
     private IEnumerator ProduceDice()

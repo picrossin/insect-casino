@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameGrid : MonoBehaviour
@@ -61,5 +62,34 @@ public class GameGrid : MonoBehaviour
 		}
 		
 		return null;
+	}
+
+	public HashSet<Unit> GetAllUnits()
+	{
+		HashSet<Unit> units = new HashSet<Unit>();
+		
+		foreach (Unit unit in _grid)
+		{
+			if (unit != null)
+			{
+				units.Add(unit);
+			}
+		}
+
+		return units;
+	}
+
+	public void RemoveUnit(Unit toRemove)
+	{
+		for (int i = 0; i < 12; i++)
+		{
+			for (int j = 0; j < 12; j++)
+			{
+				if (_grid[i, j] == toRemove)
+				{
+					_grid[i, j] = null;
+				}
+			}
+		}
 	}
 }
