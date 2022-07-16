@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
@@ -13,6 +15,16 @@ public class Unit : MonoBehaviour
 
     [SerializeField] protected GameManager.UnitType type;
     public GameManager.UnitType BugType => type;
+
+    private int _strength = 1;
+    private GameObject _strengthCanvas;
+    private Text _strengthText;
+
+    protected void Start()
+    {
+        _strengthCanvas = transform.Find("HealthCanvas").gameObject;
+        _strengthText = _strengthCanvas.GetComponentInChildren<Text>();
+    }
 
     private void Update()
     {
@@ -37,5 +49,18 @@ public class Unit : MonoBehaviour
                 _placing = false;
             }
         }
+    }
+
+    public void ShowHideStrength()
+    {
+        StartCoroutine(ShowStrength());
+    }
+
+    private IEnumerator ShowStrength()
+    {
+        _strengthText.text = $"{_strength}/7";
+        _strengthCanvas.SetActive(true);
+        yield return new WaitForEndOfFrame();
+        _strengthCanvas.SetActive(false);
     }
 }

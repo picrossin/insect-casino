@@ -49,4 +49,17 @@ public class GameGrid : MonoBehaviour
 			_grid[xPos + 1, yPos + 1] = unitToPlace;
 		}
 	}
+
+	public Unit GetUnit(Vector3Int tilegridPosition)
+	{
+		int xPos = tilegridPosition.x + 6;
+		int yPos = tilegridPosition.y + 6;
+		
+		if (xPos >= 0 && xPos <= 11 && yPos >= 0 && yPos <= 11)
+		{
+			return _grid[xPos, yPos];
+		}
+		
+		return null;
+	}
 }
