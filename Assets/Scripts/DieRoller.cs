@@ -45,7 +45,7 @@ public class DieRoller : MonoBehaviour
     {
         _spinning = true;
         transform.position = _originalPosition;
-        transform.rotation = Quaternion.identity;
+        transform.rotation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0f, 0.5f, 0.5f));
         _rigidbody.useGravity = false;
         _rigidbody.isKinematic = true;
     }

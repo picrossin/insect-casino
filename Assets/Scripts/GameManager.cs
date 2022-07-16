@@ -27,7 +27,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DieUIManager dieUIManager;
     
     [SerializeField] private Grid grid;
-    public Grid GameGrid => grid;
+    public Grid TileGrid => grid;
+
+    [SerializeField] private GameGrid gameGrid;
+    public GameGrid GameGrid => gameGrid;
 
     private GameState _state;
     public GameState State
@@ -76,7 +79,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.25f); // Buffer for velocity
         yield return new WaitUntil(() => dieRb.velocity.magnitude <= float.Epsilon && dieRb.angularVelocity.magnitude <= float.Epsilon);
         Unit newUnit = Instantiate(units[dieToRoll.GetDieSide() - 1], 
-            GameGrid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition)) + new Vector3(0.5f, 1.5f, 0.0f), 
+            TileGrid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition)) + new Vector3(0.5f, 1.5f, 0.0f), 
             Quaternion.identity).GetComponent<Unit>();
         newUnit.Placing = true;
         _state = GameState.Placing;

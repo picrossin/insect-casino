@@ -10,6 +10,7 @@
           <e p="DieRoller.cs" t="Include" />
           <e p="DieUI.cs" t="Include" />
           <e p="DieUIManager.cs" t="Include" />
+          <e p="GameGrid.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Units" t="Include">
             <e p="CardTower.cs" t="Include" />
