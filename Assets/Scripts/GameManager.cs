@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] units; 
     [SerializeField] private float produceTime = 10f;
     [SerializeField] private DieUIManager dieUIManager;
+    [SerializeField] private GameObject hand;
     
     [SerializeField] private Grid grid;
     public Grid TileGrid => grid;
@@ -59,11 +61,50 @@ public class GameManager : MonoBehaviour
     private bool _busy;
     public bool Busy => _busy;
 
+    private HashSet<Chips> _chipPiles = new HashSet<Chips>();
+
+    private float _handWaitTime = 5f;
+    private List<Chips> _chipTargets = new List<Chips>();
+
     private void Start()
     {
         Instance = this;
+        
         _state = GameState.Normal;
+
         StartCoroutine(ProduceDice());
+        StartCoroutine(SpawnHands());
+    }
+
+    public void AddChipPile(Chips chipPile)
+    {
+        _chipPiles.Add(chipPile);
+        _chipTargets.Add(chipPile);
+    }
+
+    public void RemoveChipPile(Chips chipPile)
+    {
+        _chipPiles.Remove(chipPile);
+
+        if (_chipPiles.Count == 0)
+        {
+            // TODO: Lose game
+            Debug.Log("YOU LOSE!!!!");
+        }
+    }
+
+    public Chips GetChipPile()
+    {
+        Chips target = null;
+
+        if (_chipTargets.Count > 0)
+        {
+            int targetIdx = Random.Range(0, _chipTargets.Count);
+            target = _chipTargets[targetIdx];
+            _chipTargets.RemoveAt(targetIdx);
+        }
+        
+        return target;
     }
 
     public void MakeUnit(DieRoller dieToRoll)
@@ -147,6 +188,20 @@ public class GameManager : MonoBehaviour
             else
             {
                 yield return new WaitForEndOfFrame();
+            }
+        }
+    }
+
+    private IEnumerator SpawnHands()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(_handWaitTime);
+
+            Chips goal = GetChipPile();
+            if (goal != null)
+            {
+                Instantiate(hand, goal.transform.position, Quaternion.identity).GetComponent<Hand>().ChipGoal = goal;
             }
         }
     }
