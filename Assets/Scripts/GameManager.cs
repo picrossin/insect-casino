@@ -50,8 +50,8 @@ public class GameManager : MonoBehaviour
         dieToRoll.Throw();
         Rigidbody dieRb = dieToRoll.GetComponent<Rigidbody>();
         yield return new WaitForSeconds(0.25f); // Buffer for velocity
-        yield return new WaitUntil(() => dieRb.velocity.magnitude <= 0.1f && dieRb.angularVelocity.magnitude <= 0.1f);
-        
+        yield return new WaitUntil(() => dieRb.velocity.magnitude <= float.Epsilon && dieRb.angularVelocity.magnitude <= float.Epsilon);
+        print(dieToRoll.GetDieSide());
         // Switch to place mode
         _state = GameState.Placing;
         // Wait until player places unit
