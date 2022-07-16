@@ -11,6 +11,15 @@
           <e p="DieUI.cs" t="Include" />
           <e p="DieUIManager.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="Units" t="Include">
+            <e p="CardTower.cs" t="Include" />
+            <e p="ExplodingAnt.cs" t="Include" />
+            <e p="GoopSnail.cs" t="Include" />
+            <e p="Honeybee.cs" t="Include" />
+            <e p="ShooterWorm.cs" t="Include" />
+            <e p="Spider.cs" t="Include" />
+            <e p="Unit.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

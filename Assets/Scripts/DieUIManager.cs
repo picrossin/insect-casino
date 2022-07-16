@@ -1,33 +1,63 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DieUIManager : MonoBehaviour
 {
-    private bool die1Spawned;
-    private bool die2Spawned;
-    private bool die3Spawned;
+    [SerializeField] private Image die1Loading;
+    [SerializeField] private Image die2Loading;
+    [SerializeField] private Image die3Loading;
+    
+    private bool _die1Spawned;
+    private bool _die2Spawned;
+    private bool _die3Spawned;
 
     private void FixedUpdate()
     {
         if (GameManager.Instance.DieReady)
         {
-            if (!die1Spawned)
+            die1Loading.fillAmount = 0f;
+            die2Loading.fillAmount = 0f;
+            die3Loading.fillAmount = 0f;
+            
+            if (!_die1Spawned)
             {
-                die1Spawned = true;
+                _die1Spawned = true;
                 transform.Find("Die 1").gameObject.SetActive(true);
                 GameManager.Instance.DieReady = false;
             }
-            else if (!die2Spawned)
+            else if (!_die2Spawned)
             {
-                die2Spawned = true;
+                _die2Spawned = true;
                 transform.Find("Die 2").gameObject.SetActive(true);
                 GameManager.Instance.DieReady = false;
             }
-            else if (!die3Spawned)
+            else if (!_die3Spawned)
             {
-                die3Spawned = true;
+                _die3Spawned = true;
                 transform.Find("Die 3").gameObject.SetActive(true);
                 GameManager.Instance.DieReady = false;
             }
+        }
+        else if (GameManager.Instance.State == GameManager.GameState.Normal && !GameManager.Instance.Busy)
+        {
+            if (!_die1Spawned)
+            {
+                die1Loading.fillAmount = GameManager.Instance.ProductionPercentage;
+            }
+            else if (!_die2Spawned)
+            {
+                die2Loading.fillAmount = GameManager.Instance.ProductionPercentage;
+            }
+            else if (!_die3Spawned)
+            {
+                die3Loading.fillAmount = GameManager.Instance.ProductionPercentage;
+            }
+        }
+        else if (GameManager.Instance.Busy)
+        {
+            die1Loading.fillAmount = 0f;
+            die2Loading.fillAmount = 0f;
+            die3Loading.fillAmount = 0f;
         }
     }
 
@@ -38,5 +68,26 @@ public class DieUIManager : MonoBehaviour
         transform.Find("Die 3").GetComponent<DieUI>().SetMenu(false);
         
         transform.Find($"Die {die}").GetComponent<DieUI>().SetMenu(true);
+    }
+
+    public void SetSpawned(int die, bool spawned)
+    {
+        switch (die)
+        {
+            case 1:
+                _die1Spawned = spawned;
+                break;
+            case 2:
+                _die2Spawned = spawned;
+                break;
+            case 3:
+                _die3Spawned = spawned;
+                break;
+        }
+    }
+
+    public bool AllSpawned()
+    {
+        return _die1Spawned && _die2Spawned && _die3Spawned;
     }
 }
