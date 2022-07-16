@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] units; 
     [SerializeField] private float produceTime = 10f;
     [SerializeField] private DieUIManager dieUIManager;
-    [SerializeField] private GameObject hand;
+    [SerializeField] private GameObject[] hands;
     
     [SerializeField] private Grid grid;
     public Grid TileGrid => grid;
@@ -93,18 +93,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public Chips GetChipPile()
+    public void ReturnChipPile(Chips chipPile)
     {
-        Chips target = null;
-
-        if (_chipTargets.Count > 0)
-        {
-            int targetIdx = Random.Range(0, _chipTargets.Count);
-            target = _chipTargets[targetIdx];
-            _chipTargets.RemoveAt(targetIdx);
-        }
-        
-        return target;
+        _chipTargets.Add(chipPile);
     }
 
     public void MakeUnit(DieRoller dieToRoll)
@@ -121,7 +112,7 @@ public class GameManager : MonoBehaviour
         _busy = true;
         
         // Immediately roll glyph die
-        dieToRoll.Throw();
+        dieToRoll.Throw(true);
         Rigidbody dieRb = dieToRoll.GetComponent<Rigidbody>();
         
         yield return new WaitForSeconds(0.25f); // Buffer for velocity
@@ -201,8 +192,22 @@ public class GameManager : MonoBehaviour
             Chips goal = GetChipPile();
             if (goal != null)
             {
-                Instantiate(hand, goal.transform.position, Quaternion.identity).GetComponent<Hand>().ChipGoal = goal;
+                Instantiate(hands[Random.Range(0, hands.Length)], goal.transform.position, Quaternion.identity).GetComponent<Hand>().ChipGoal = goal;
             }
         }
+    }
+    
+    private Chips GetChipPile()
+    {
+        Chips target = null;
+
+        if (_chipTargets.Count > 0)
+        {
+            int targetIdx = Random.Range(0, _chipTargets.Count);
+            target = _chipTargets[targetIdx];
+            _chipTargets.RemoveAt(targetIdx);
+        }
+        
+        return target;
     }
 }

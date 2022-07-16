@@ -41,7 +41,7 @@ public class Unit : MonoBehaviour
                 // TODO: color red or something
             }
             
-            transform.position = gridPosition + new Vector3(0.5f + _spriteOffset.x, 1.25f + _spriteOffset.y, 0.0f);
+            transform.position = gridPosition + new Vector3(0.5f + _spriteOffset.x, 0.813f + _spriteOffset.y, 0.0f);
             
             if (Input.GetMouseButtonDown(0) && canPlace)
             {

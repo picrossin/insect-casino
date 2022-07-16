@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 2959213510025517517}
   - component: {fileID: 9148832162009308743}
   m_Layer: 0
-  m_Name: Hand
+  m_Name: Hand Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,6 +228,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reachSpeed: 0.05
+  retractSpeed: 0.1
+  reachSprite: {fileID: -1208580821, guid: 0a50857896b24d24d9f9972d9405c313, type: 3}
+  grabSprite: {fileID: 1116443751, guid: 0a50857896b24d24d9f9972d9405c313, type: 3}
+  slamSprite: {fileID: 1863271518, guid: 0a50857896b24d24d9f9972d9405c313, type: 3}
 --- !u!1 &7226141539793083631
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +305,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -616634427, guid: 73e0ac125d132c84993d8abfdd5edfd0, type: 3}
+  m_Sprite: {fileID: -1208580821, guid: 0a50857896b24d24d9f9972d9405c313, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
