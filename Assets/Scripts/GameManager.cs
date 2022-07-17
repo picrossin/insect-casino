@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
         _busy = true;
         
         // Immediately roll glyph die
-        dieToRoll.Throw(true);
+        dieToRoll.Throw();
         Rigidbody dieRb = dieToRoll.GetComponent<Rigidbody>();
         
         yield return new WaitForSeconds(0.25f); // Buffer for velocity

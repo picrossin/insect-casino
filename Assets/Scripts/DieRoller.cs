@@ -10,16 +10,21 @@ public class DieRoller : MonoBehaviour
     [SerializeField] private Texture glyphTex;
     [SerializeField] private GameObject rollSFX;
 
+    private bool _glyph;
+    public bool Glyph => _glyph;
+
     private Rigidbody _rigidbody;
     private bool _spinning;
     private Vector3 _originalPosition;
     private Texture _numTex;
+    private Renderer _renderer;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _renderer = GetComponent<Renderer>();
         _originalPosition = transform.position;
-        _numTex = GetComponent<Renderer>().material.mainTexture;
+        _numTex = _renderer.material.mainTexture;
         Spin();
     }
 
@@ -31,7 +36,7 @@ public class DieRoller : MonoBehaviour
         }
     }
     
-    public void Throw(bool glyphs=false)
+    public void Throw()
     {
         _spinning = false;
         _rigidbody.useGravity = true;
@@ -40,11 +45,6 @@ public class DieRoller : MonoBehaviour
 
         Instantiate(rollSFX, transform);
 
-        if (glyphs)
-        {
-            GetComponent<Renderer>().material.mainTexture = glyphTex;
-        }
-        
         Vector3 randDir = Random.insideUnitCircle.normalized;
         randDir = new Vector3(-Mathf.Abs(randDir.x), randDir.y);
         
@@ -56,12 +56,19 @@ public class DieRoller : MonoBehaviour
     public void Spin()
     {
         _spinning = true;
+        _glyph = Random.value > 0.5f;
+
+        if (GameManager.Instance.GameGrid.GetAllUnits(true).Count == 0)
+        {
+            _glyph = true;
+        }
+        
         transform.position = _originalPosition;
         transform.rotation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(Random.value, Random.value, Random.value));
         _rigidbody.useGravity = false;
         _rigidbody.isKinematic = true;
         GetComponent<Collider>().enabled = false;
-        GetComponent<Renderer>().material.mainTexture = _numTex;
+        _renderer.material.mainTexture = _glyph ? glyphTex : _numTex;
     }
 
     public void SetSpawned(bool spawned)

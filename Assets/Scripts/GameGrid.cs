@@ -64,7 +64,7 @@ public class GameGrid : MonoBehaviour
 		return null;
 	}
 
-	public HashSet<Unit> GetAllUnits()
+	public HashSet<Unit> GetAllUnits(bool ignoreChips=false)
 	{
 		HashSet<Unit> units = new HashSet<Unit>();
 		
@@ -72,7 +72,14 @@ public class GameGrid : MonoBehaviour
 		{
 			if (unit != null)
 			{
-				units.Add(unit);
+				if (ignoreChips && unit is ChipUnit)
+				{
+					
+				}
+				else
+				{
+					units.Add(unit);
+				}
 			}
 		}
 

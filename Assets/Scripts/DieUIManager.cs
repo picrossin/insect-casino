@@ -67,6 +67,8 @@ public class DieUIManager : MonoBehaviour
 
     public void OpenDieMenu(int die)
     {
+        if (GameManager.Instance.State != GameManager.GameState.Normal || GameManager.Instance.Busy) return;
+        
         transform.Find("Die 1").GetComponent<DieUI>().SetMenu(false);
         transform.Find("Die 2").GetComponent<DieUI>().SetMenu(false);
         transform.Find("Die 3").GetComponent<DieUI>().SetMenu(false);
