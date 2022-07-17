@@ -361,7 +361,7 @@ public class GameManager : MonoBehaviour
                 _availableHandAngles.Remove(angle);
                 Hand hand = Instantiate(hands[Random.Range(0, hands.Length)], goal.transform.position, Quaternion.identity).GetComponent<Hand>();
                 hand.ChipGoal = goal;
-                hand.ReachSpeedModifier = Mathf.Floor(_score / 50f) * .01f;
+                hand.ReachSpeedModifier = Mathf.Floor(_score / 50f) * .0075f;
                 hand.Angle = angle;
                 _handsInPlay.Add(hand);
             }
