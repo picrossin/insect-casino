@@ -233,6 +233,9 @@ MonoBehaviour:
   reachSprite: {fileID: 1827707801, guid: 044abcdeab1435a41b42b917ccb56b0e, type: 3}
   grabSprite: {fileID: 2097293278, guid: 044abcdeab1435a41b42b917ccb56b0e, type: 3}
   slamSprite: {fileID: -1997649112, guid: 044abcdeab1435a41b42b917ccb56b0e, type: 3}
+  handHurter:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!58 &5731076589700174018
 CircleCollider2D:
   m_ObjectHideFlags: 0

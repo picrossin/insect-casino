@@ -20,6 +20,7 @@ public class Hand : MonoBehaviour
 	[SerializeField] private Sprite reachSprite;
 	[SerializeField] private Sprite grabSprite;
 	[SerializeField] private Sprite slamSprite;
+	[SerializeField] private LayerMask handHurter;
 	
 	private Chips _chipGoal;
 	public Chips ChipGoal
@@ -103,6 +104,14 @@ public class Hand : MonoBehaviour
 				_state = HandState.ReachingIn;
 				break;
 			case HandState.ReachingIn:
+				Collider2D coll = Physics2D.OverlapCircle(transform.position, 0.75f, handHurter);
+
+				if (coll != null)
+				{
+					Destroy(coll.gameObject);
+					_queueDamage += 1;
+				}
+				
 				if (_queueDamage > 0)
 				{
 					StartCoroutine(TakeDamage(_queueDamage));
@@ -119,6 +128,14 @@ public class Hand : MonoBehaviour
 				}
 				break;
 			case HandState.Attacking:
+				Collider2D coll1 = Physics2D.OverlapCircle(transform.position, 0.75f, handHurter);
+
+				if (coll1 != null)
+				{
+					Destroy(coll1.gameObject);
+					_queueDamage += 1;
+				}
+				
 				if (_queueDamage > 0)
 				{
 					StartCoroutine(TakeDamage(_queueDamage));

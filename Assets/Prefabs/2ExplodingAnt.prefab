@@ -120,6 +120,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  showStrength: 1
+  explosion: {fileID: 4119670903897345408, guid: 74192f911d485cf4596022ba796b11ed, type: 3}
+  projDestroyers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &8766364766935724873
 PrefabInstance:
   m_ObjectHideFlags: 0

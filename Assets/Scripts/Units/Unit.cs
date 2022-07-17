@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
-    private bool _placing;
+    protected bool _placing;
     public bool Placing
     {
         get => _placing;

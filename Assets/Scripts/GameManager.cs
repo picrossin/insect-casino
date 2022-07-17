@@ -69,6 +69,13 @@ public class GameManager : MonoBehaviour
     
     private HashSet<float> _availableHandAngles = new HashSet<float> {0f, 45f, 90f, 135f, 180f, 225f, 270f, 315f};
     public HashSet<float> AvailableHandAngles => _availableHandAngles;
+    
+    private float _timeWaited = 0f;
+    public float TimeWaited
+    {
+        get => _timeWaited;
+        set => _timeWaited = value;
+    }
 
     private float _handWaitTime = 5f;
     private List<Chips> _chipTargets = new List<Chips>();
@@ -120,6 +127,7 @@ public class GameManager : MonoBehaviour
         _busy = true;
         
         // Immediately roll glyph die
+        
         dieToRoll.Throw(true);
         Rigidbody dieRb = dieToRoll.GetComponent<Rigidbody>();
         
@@ -173,13 +181,13 @@ public class GameManager : MonoBehaviour
         {
             if (!_dieReady && !dieUIManager.AllSpawned())
             {
-                float timeWaited = 0f;
-                while (timeWaited < produceTime)
+                _timeWaited = 0f;
+                while (_timeWaited < produceTime)
                 {
                     yield return new WaitUntil(() => !_busy);
                     yield return new WaitForEndOfFrame();
-                    timeWaited += Time.deltaTime;
-                    _productionPercentage = timeWaited / produceTime;
+                    _timeWaited += Time.deltaTime;
+                    _productionPercentage = _timeWaited / produceTime;
                 }
 
                 _dieReady = true;
