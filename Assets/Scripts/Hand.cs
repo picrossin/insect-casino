@@ -63,6 +63,7 @@ public class Hand : MonoBehaviour
 		_sprite = transform.Find("Sprite").GetComponent<SpriteRenderer>();
 		_healthCanvas = transform.Find("HealthCanvas");
 		_healthBar = _healthCanvas.GetComponentInChildren<StrengthBar>();
+		_healthBar.SetStrength(_health);
 	}
 	
 	private void FixedUpdate()
@@ -185,6 +186,13 @@ public class Hand : MonoBehaviour
 		_healthBar.SetStrength(_health);
 		Instantiate(smash, transform.position, Quaternion.identity);
 		yield return new WaitForSeconds(0.25f);
+
+		if (_health <= 0)
+		{
+			GameManager.Instance.HandsInPlay.Remove(this);
+			GameManager.Instance.AvailableHandAngles.Add(_angle);
+			_healthCanvas.gameObject.SetActive(false);
+		}
 
 		_state = _health > 0 ? HandState.ReachingIn : HandState.Retracting;
 	}

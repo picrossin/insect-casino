@@ -21,9 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9ee4ba30-edc7-44f1-a4d2-fcab2162978a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Die Model.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Die Model.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hand Blue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hand Blue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hand Grey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hand Grey.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hand Purple.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hand Purple.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hand Red.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hand Red.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +72,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TitleSignAnim.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Leaderboard/HighScores.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Leaderboard/SaveData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DestroyAfterSecs.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chips.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/ExplodingAnt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Spider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DieUIManager.cs" />
@@ -80,12 +82,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonSoundHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HelpBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ApplyShake.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cursor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScreenShake.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" />
       </list>
     </option>
   </component>
@@ -131,7 +135,7 @@
       <updated>1657929910868</updated>
       <workItem from="1657929915738" duration="22300000" />
       <workItem from="1657985288337" duration="47326000" />
-      <workItem from="1658048501454" duration="14450000" />
+      <workItem from="1658048501454" duration="15234000" />
     </task>
     <servers />
   </component>
@@ -236,9 +240,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1159" y="328" width="644" height="534" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658043896502" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1658065273835">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1658066546781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658065273835" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658066546781" />
   </component>
 </project>

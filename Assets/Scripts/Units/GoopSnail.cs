@@ -21,7 +21,7 @@ public class GoopSnail : Unit
 		{
 			Instantiate(projectile, transform.position, Quaternion.identity);
 			Instantiate(shootSFX, transform.position, Quaternion.identity);
-			yield return new WaitForSeconds(baseShootTime);
+			yield return new WaitForSeconds(baseShootTime - (_strength * 1.5f));
 		}
 	}
 }

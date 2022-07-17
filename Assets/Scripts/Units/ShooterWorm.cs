@@ -16,12 +16,12 @@ public class ShooterWorm : Unit
 	private IEnumerator Shoot()
 	{
 		yield return new WaitUntil(() => GameManager.Instance.State == GameManager.GameState.Normal);
-		
+
 		while (true)
 		{
 			Instantiate(projectile, transform.position, Quaternion.identity);
 			Instantiate(shootSFX, transform.position, Quaternion.identity);
-			yield return new WaitForSeconds(baseShootTime);
+			yield return new WaitForSeconds(baseShootTime - _strength);
 		}
 	}
 }
