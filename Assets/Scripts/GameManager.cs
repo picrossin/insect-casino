@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] hands;
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject titleUI;
+    [SerializeField] private GameObject leaderboardUI;
     
     [SerializeField] private Grid grid;
     public Grid TileGrid => grid;
@@ -98,12 +99,18 @@ public class GameManager : MonoBehaviour
     private float _handWaitTime = 5f;
     private List<Chips> _chipTargets = new List<Chips>();
     private HashSet<Chips> _chipPiles = new HashSet<Chips>();
+    private Text _scoreText;
+    private float _score;
     private bool _gameInitialized;
     private bool _titleInitialized;
+    private bool _leaderboardInitialized;
+    private bool _keepScore;
 
     private void Start()
     {
         Instance = this;
+
+        _scoreText = gameUI.transform.Find("ScoreText").GetComponent<Text>();
         
         _state = GameState.Normal;
         _programState = ProgramState.Title;
@@ -127,12 +134,28 @@ public class GameManager : MonoBehaviour
                 {
                     gameUI.SetActive(true);
                     _state = GameState.Normal;
+                    _score = 0;
+                    _keepScore = true;
                     StartCoroutine(ProduceDice());
                     StartCoroutine(SpawnHands());
+                    StartCoroutine(LoseGame());
                     _gameInitialized = true;
+                }
+                else
+                {
+                    if (_keepScore)
+                    {
+                        _score += Time.deltaTime;
+                        _scoreText.text = $"SCORE: {Mathf.FloorToInt(_score)}";
+                    }
                 }
                 break;
             case ProgramState.Leaderboard:
+                if (!_leaderboardInitialized)
+                {
+                    leaderboardUI.SetActive(true);
+                    _leaderboardInitialized = true;
+                }
                 break;
         }
     }
@@ -163,8 +186,9 @@ public class GameManager : MonoBehaviour
 
         if (_chipPiles.Count == 0)
         {
-            // TODO: Lose game
-            Debug.Log("YOU LOSE!!!!");
+            _keepScore = false;
+            gameUI.SetActive(false);
+            StartCoroutine(LoseGame());
         }
     }
 
@@ -177,6 +201,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(MakeUnitAnim(dieToRoll));
     }
+    
     public void UpgradeUnit(DieRoller dieToRoll)
     {
         StartCoroutine(UpgradeUnitAnim(dieToRoll));
@@ -187,7 +212,6 @@ public class GameManager : MonoBehaviour
         _busy = true;
         
         // Immediately roll glyph die
-        
         dieToRoll.Throw(true);
         Rigidbody dieRb = dieToRoll.GetComponent<Rigidbody>();
         
@@ -271,6 +295,14 @@ public class GameManager : MonoBehaviour
                 Instantiate(hands[Random.Range(0, hands.Length)], goal.transform.position, Quaternion.identity).GetComponent<Hand>().ChipGoal = goal;
             }
         }
+    }
+
+    private IEnumerator LoseGame()
+    {
+        // TODO: Display you lose text
+        yield return new WaitForSeconds(3f);
+        _leaderboardInitialized = false;
+        _programState = ProgramState.Leaderboard;
     }
     
     private Chips GetChipPile()
