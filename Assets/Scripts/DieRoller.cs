@@ -36,6 +36,7 @@ public class DieRoller : MonoBehaviour
         _spinning = false;
         _rigidbody.useGravity = true;
         _rigidbody.isKinematic = false;
+        GetComponent<Collider>().enabled = true;
 
         Instantiate(rollSFX, transform);
 
@@ -45,7 +46,7 @@ public class DieRoller : MonoBehaviour
         }
         
         Vector3 randDir = Random.insideUnitCircle.normalized;
-        randDir = new Vector3(-Mathf.Abs(randDir.x), Mathf.Abs(randDir.y));
+        randDir = new Vector3(-Mathf.Abs(randDir.x), randDir.y);
         
         _rigidbody.AddForceAtPosition(randDir * Random.Range(dieLaunchMultiplier, dieLaunchMultiplier),
             transform.position + Vector3.back * 0.75f, 
@@ -56,9 +57,10 @@ public class DieRoller : MonoBehaviour
     {
         _spinning = true;
         transform.position = _originalPosition;
-        transform.rotation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0f, 0.5f, 0.5f));
+        transform.rotation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(Random.value, Random.value, Random.value));
         _rigidbody.useGravity = false;
         _rigidbody.isKinematic = true;
+        GetComponent<Collider>().enabled = false;
         GetComponent<Renderer>().material.mainTexture = _numTex;
     }
 
