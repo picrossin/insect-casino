@@ -11,6 +11,13 @@ public class Unit : MonoBehaviour
         get => _placing;
         set => _placing = value;
     }
+    
+    protected bool _upgrading;
+    public bool Upgrading
+    {
+        get => _upgrading;
+        set => _upgrading = value;
+    }
 
     protected Vector2 _spriteOffset = Vector2.zero;
     protected int _strength = 0;
@@ -21,16 +28,17 @@ public class Unit : MonoBehaviour
     [SerializeField] private bool showStrength = true;
     [SerializeField] private GameObject splat;
     [SerializeField] private GameObject place;
-    [SerializeField] private GameObject fortify;
-    [SerializeField] private GameObject bust;
-    [SerializeField] private GameObject smash;
+    [SerializeField] protected GameObject fortify;
+    [SerializeField] protected GameObject bust;
+    [SerializeField] protected GameObject smash;
 
     private SpriteRenderer _sprite;
     private GameObject _strengthCanvas;
     private Text _strengthText;
     private StrengthBar _strengthBar;
-    private bool _strengthening;
+    protected bool _strengthening;
     private Tween _jiggle;
+    private BoxCollider2D _coll;
 
     protected void Start()
     {
@@ -38,6 +46,7 @@ public class Unit : MonoBehaviour
         _strengthCanvas = transform.Find("HealthCanvas").gameObject;
         _strengthText = _strengthCanvas.GetComponentInChildren<Text>();
         _strengthBar = _strengthCanvas.GetComponentInChildren<StrengthBar>();
+        _coll = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
@@ -72,6 +81,11 @@ public class Unit : MonoBehaviour
         if (_strengthening)
         {
             ShowStrength();
+        }
+
+        if (_coll != null)
+        {
+            _coll.enabled = !_upgrading;
         }
     }
 
@@ -108,6 +122,8 @@ public class Unit : MonoBehaviour
             _strength++;
             yield return new WaitForSeconds(0.1f);
         }
+        
+        _upgrading = false;
 
         if (_strength > 6)
         {

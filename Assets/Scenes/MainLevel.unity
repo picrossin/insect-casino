@@ -5706,6 +5706,7 @@ MonoBehaviour:
     text: BEES PRODUCE DICE FASTER
   - sprite: {fileID: 1890679704, guid: bca94ff3c44c61b4ab4679e838634169, type: 3}
     text: SPIDERS CATCH NEARBY HANDS
+  bg: {fileID: 764510128}
   hiHat: {fileID: 8300000, guid: 3bc3d24598de84145b224a0440fa8761, type: 3}
   mainTrack: {fileID: 8300000, guid: cd6c2f368cde9ea4a9dd929c3e9b5227, type: 3}
   grid: {fileID: 1005462415}

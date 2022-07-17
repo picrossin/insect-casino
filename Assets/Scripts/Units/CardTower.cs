@@ -25,21 +25,32 @@ public class CardTower : Unit
 		}
 		else
 		{
+			Instantiate(smash, transform.position, Quaternion.identity);
 			_spriteRenderer.sprite = sprites[_strength - 1];
 		}
 	}
 	
 	protected override IEnumerator AddStrengthAnim(int strengthToAdd)
 	{
-		_strength += strengthToAdd;
+		_strengthening = true;
+		Instantiate(fortify, transform.position, Quaternion.identity);
+        
+		for (int i = 0; i < strengthToAdd; i++)
+		{
+			_strength++;
+			yield return new WaitForSeconds(0.1f);
+			_spriteRenderer.sprite = sprites[Mathf.Min(_strength - 1,  5)];
+		}
+        
+		_upgrading = false;
 
 		if (_strength > 6)
 		{
-			// BUST!
+			Instantiate(bust, transform.position, Quaternion.identity);
 			StartCoroutine(DieAnim());
 		}
-        
-		_spriteRenderer.sprite = sprites[_strength - 1];
-		yield break; // TODO: Add anim
+
+		yield return new WaitForSeconds(0.25f);
+		_strengthening = false;
 	}
 }

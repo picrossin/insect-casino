@@ -75,6 +75,8 @@ public class Hand : MonoBehaviour
 			case HandState.Spawning:
 				break;
 			case HandState.ReachingIn:
+				if (GameManager.Instance.Choosing) return;
+				
 				transform.position -= transform.right * reachSpeed;
 				_healthCanvas.rotation = Quaternion.identity;
 				break;
@@ -235,6 +237,7 @@ public class Hand : MonoBehaviour
 		float timeTaken = 0f;
 		while (timeTaken < 0.5f)
 		{
+			yield return new WaitUntil(() => !GameManager.Instance.Choosing);
 			transform.position = Vector3.Slerp(originalPos, newPos, timeTaken / 0.5f);
 			yield return new WaitForEndOfFrame();
 			timeTaken += Time.deltaTime;
@@ -250,6 +253,7 @@ public class Hand : MonoBehaviour
 		else
 		{
 			((CardTower) unitToAttack).Hurt(1);
+			_attacked = false;
 		}
 		
 		timeTaken = 0f;

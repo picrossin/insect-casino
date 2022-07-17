@@ -83,6 +83,8 @@ public class Spider : Unit
 		
 		while (true)
 		{
+			yield return new WaitUntil(() => !GameManager.Instance.Choosing);
+
 			Instantiate(webSFX, transform.position, Quaternion.identity);
 			
 			Vector3Int tilePos = GameManager.Instance.TileGrid.WorldToCell(transform.position);

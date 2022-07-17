@@ -19,6 +19,7 @@ public class ShooterWorm : Unit
 
 		while (true)
 		{
+			yield return new WaitUntil(() => !GameManager.Instance.Choosing);
 			Instantiate(projectile, transform.position, Quaternion.identity);
 			Instantiate(shootSFX, transform.position, Quaternion.identity);
 			yield return new WaitForSeconds(baseShootTime - _strength);

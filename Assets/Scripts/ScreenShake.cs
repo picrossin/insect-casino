@@ -18,6 +18,7 @@ public class ScreenShake : MonoBehaviour
 
     public void Shake(float intensity, float duration)
     {
+        return;
         StartCoroutine(ShakeAnim(intensity, duration));
     }
 
@@ -26,5 +27,6 @@ public class ScreenShake : MonoBehaviour
         transform.DOShakePosition(duration, intensity);
         yield return new WaitForSeconds(duration);
         transform.position = new Vector3(0f, 0f, -10f);
+        
     }
 }

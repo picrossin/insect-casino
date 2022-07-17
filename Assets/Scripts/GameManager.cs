@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject leaderboardUI;
     [SerializeField] private HelpBox helpBox;
     [SerializeField] private Helper[] helpers;
+    [SerializeField] private SpriteRenderer bg;
 
     [SerializeField] private AudioClip hiHat;
     [SerializeField] private AudioClip mainTrack;
@@ -111,6 +112,9 @@ public class GameManager : MonoBehaviour
         set => _timeWaited = value;
     }
 
+    private bool _choosing;
+    public bool Choosing => _choosing;
+
     private float _handWaitTime = 10f;
     private List<Chips> _chipTargets = new List<Chips>();
     private HashSet<Chips> _chipPiles = new HashSet<Chips>();
@@ -163,7 +167,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    if (_keepScore)
+                    if (_keepScore && !_choosing)
                     {
                         _score += Time.deltaTime;
                         _scoreText.text = $"SCORE: {Mathf.FloorToInt(_score)}";
@@ -284,12 +288,19 @@ public class GameManager : MonoBehaviour
     private IEnumerator UpgradeUnitAnim(DieRoller dieToRoll)
     {
         _state = GameState.Upgrading;
+        _choosing = true;
+        bg.color = Color.gray;
         foreach (Unit unit in gameGrid.GetAllUnits())
         {
             unit.ShowStrength();
         }
         
         yield return new WaitUntil(() => UnitToUpgrade != null);
+
+        _choosing = false;
+        bg.color = Color.white;
+
+        UnitToUpgrade.Upgrading = true;
         
         dieToRoll.Throw();
         Rigidbody dieRb = dieToRoll.GetComponent<Rigidbody>();
@@ -317,7 +328,7 @@ public class GameManager : MonoBehaviour
                 _timeWaited = 0f;
                 while (_timeWaited < produceTime)
                 {
-                    yield return new WaitUntil(() => !_busy);
+                    yield return new WaitUntil(() => !_busy && !_choosing);
                     yield return new WaitForEndOfFrame();
                     _timeWaited += Time.deltaTime;
                     _productionPercentage = _timeWaited / produceTime;

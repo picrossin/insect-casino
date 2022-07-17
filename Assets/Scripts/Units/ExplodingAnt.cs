@@ -77,7 +77,7 @@ public class ExplodingAnt : Unit
 
 	private void FixedUpdate()
 	{
-		if (_placing) return;
+		if (_placing || GameManager.Instance.Choosing) return;
 		
 		float range = 1.5f;
 

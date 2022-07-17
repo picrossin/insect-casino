@@ -12,12 +12,14 @@ public class Honeybee : Unit
 		StartCoroutine(Produce());
 	}
 
+	
 	private IEnumerator Produce()
 	{
 		yield return new WaitUntil(() => GameManager.Instance.State == GameManager.GameState.Normal);
 
 		while (true)
 		{
+			yield return new WaitUntil(() => !GameManager.Instance.Choosing);
 			GameManager.Instance.TimeWaited += addTimeBase * (_strength + 1);
 			yield return new WaitForSeconds(produceTime);
 		}
