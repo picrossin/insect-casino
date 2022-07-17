@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -138,7 +140,6 @@ public class GameManager : MonoBehaviour
                     _keepScore = true;
                     StartCoroutine(ProduceDice());
                     StartCoroutine(SpawnHands());
-                    StartCoroutine(LoseGame());
                     _gameInitialized = true;
                 }
                 else
@@ -154,6 +155,9 @@ public class GameManager : MonoBehaviour
                 if (!_leaderboardInitialized)
                 {
                     leaderboardUI.SetActive(true);
+                    leaderboardUI.GetComponent<Animation>().Play("In");
+                    leaderboardUI.transform.Find("Leaderboard/MyScore").GetComponent<TextMeshProUGUI>().text =
+                        Mathf.FloorToInt(_score).ToString();
                     _leaderboardInitialized = true;
                 }
                 break;
@@ -167,11 +171,23 @@ public class GameManager : MonoBehaviour
         _gameInitialized = false;
     }
 
+    public void BackToTitle()
+    {
+        StartCoroutine(LeaderboardOutAnim());
+    }
+
     private IEnumerator TitleScreenOutAnim()
     {
         titleUI.GetComponent<Animation>().Play("TitleOut");
         yield return new WaitForSeconds(1f);
         titleUI.SetActive(false);
+    }
+
+    private IEnumerator LeaderboardOutAnim()
+    {
+        leaderboardUI.GetComponent<Animation>().Play("Out");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(0);
     }
 
     public void AddChipPile(Chips chipPile)
@@ -301,6 +317,7 @@ public class GameManager : MonoBehaviour
     {
         // TODO: Display you lose text
         yield return new WaitForSeconds(3f);
+        gameUI.SetActive(false);
         _leaderboardInitialized = false;
         _programState = ProgramState.Leaderboard;
     }

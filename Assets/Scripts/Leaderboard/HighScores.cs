@@ -11,7 +11,7 @@ public class HighScores : MonoBehaviour
     public PlayerScore[] scoreList;
     DisplayHighscores myDisplay;
 
-    static HighScores instance; //Required for STATIC usability
+    public static HighScores instance; //Required for STATIC usability
     void Awake()
     {
         instance = this; //Sets Static Instance
