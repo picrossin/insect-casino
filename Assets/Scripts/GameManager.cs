@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -351,12 +352,17 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_handWaitTime);
-            _handWaitTime *= 0.975f;
+            _handWaitTime *= 0.95f;
 
             Chips goal = GetChipPile();
             if (goal != null && _availableHandAngles.Count > 0)
             {
-                Instantiate(hands[Random.Range(0, hands.Length)], goal.transform.position, Quaternion.identity).GetComponent<Hand>().ChipGoal = goal;
+                float angle = _availableHandAngles.ToArray()[Random.Range(0, _availableHandAngles.Count)];
+                _availableHandAngles.Remove(angle);
+                Hand hand = Instantiate(hands[Random.Range(0, hands.Length)], goal.transform.position, Quaternion.identity).GetComponent<Hand>();
+                hand.ChipGoal = goal;
+                hand.ReachSpeedModifier = Mathf.Floor(_score / 50f) * .005f;
+                hand.Angle = angle;
             }
         }
     }

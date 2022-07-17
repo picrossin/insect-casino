@@ -16,6 +16,8 @@ public class Hand : MonoBehaviour
 	}
 	
 	[SerializeField] private float reachSpeed = 0.1f;
+	public float ReachSpeedModifier;
+	
 	[SerializeField] private float retractSpeed = 0.1f;
 	[SerializeField] private Sprite reachSprite;
 	[SerializeField] private Sprite grabSprite;
@@ -48,12 +50,18 @@ public class Hand : MonoBehaviour
 	private HandState _state;
 	public HandState State => _state;
 
+	private float _angle;
+	public float Angle
+	{
+		get => _angle;
+		set => _angle = value;
+	}
+
 	private const float SLOWDOWN_TIME = 2f;
 
 	private SpriteRenderer _sprite;
 	private Transform _healthCanvas;
 	private StrengthBar _healthBar;
-	private float _angle;
 	private int _health = 6;
 	private bool _attacked;
 
@@ -77,7 +85,7 @@ public class Hand : MonoBehaviour
 			case HandState.ReachingIn:
 				if (GameManager.Instance.Choosing) return;
 				
-				transform.position -= transform.right * reachSpeed;
+				transform.position -= transform.right * (reachSpeed + ReachSpeedModifier);
 				_healthCanvas.rotation = Quaternion.identity;
 				break;
 			case HandState.Attacking:
@@ -100,11 +108,6 @@ public class Hand : MonoBehaviour
 		switch (_state)
 		{
 			case HandState.Spawning:
-				GameManager.Instance.HandsInPlay.Add(this);
-				_angle = GameManager.Instance.AvailableHandAngles.ToArray()[
-					Random.Range(0, GameManager.Instance.AvailableHandAngles.Count)];
-				GameManager.Instance.AvailableHandAngles.Remove(_angle);
-				
 				transform.position = _chipGoal.transform.position;
 				transform.rotation = Quaternion.AngleAxis(_angle, Vector3.back);
 				transform.position += transform.right * 16f;
