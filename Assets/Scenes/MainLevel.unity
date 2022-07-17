@@ -7421,6 +7421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Die Model 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2555686914144408004, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
+      propertyPath: m_TagString
+      value: DieRoller
+      objectReference: {fileID: 0}
     - target: {fileID: 5730876656229135717, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -8433,6 +8437,10 @@ PrefabInstance:
     - target: {fileID: 2555686914144408004, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: m_Name
       value: Die Model 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2555686914144408004, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
+      propertyPath: m_TagString
+      value: DieRoller
       objectReference: {fileID: 0}
     - target: {fileID: 5730876656229135717, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: m_Mesh
@@ -10014,6 +10022,10 @@ PrefabInstance:
     - target: {fileID: 2555686914144408004, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: m_Name
       value: Die Model 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2555686914144408004, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
+      propertyPath: m_TagString
+      value: DieRoller
       objectReference: {fileID: 0}
     - target: {fileID: 5730876656229135717, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: m_Mesh

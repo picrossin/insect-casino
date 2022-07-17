@@ -68,12 +68,23 @@ public class DieUIManager : MonoBehaviour
     public void OpenDieMenu(int die)
     {
         if (GameManager.Instance.State != GameManager.GameState.Normal || GameManager.Instance.Busy) return;
+
+        DieRoller roller = transform.Find($"Die {die}/Die Model {die}").GetComponent<DieRoller>();
         
-        transform.Find("Die 1").GetComponent<DieUI>().SetMenu(false);
-        transform.Find("Die 2").GetComponent<DieUI>().SetMenu(false);
-        transform.Find("Die 3").GetComponent<DieUI>().SetMenu(false);
-        
-        transform.Find($"Die {die}").GetComponent<DieUI>().SetMenu(true);
+        if (roller.Glyph)
+        {
+            GameManager.Instance.MakeUnit(roller);
+        }
+        else
+        {
+            GameManager.Instance.UpgradeUnit(roller);
+        }
+
+        // transform.Find("Die 1").GetComponent<DieUI>().SetMenu(false);
+        // transform.Find("Die 2").GetComponent<DieUI>().SetMenu(false);
+        // transform.Find("Die 3").GetComponent<DieUI>().SetMenu(false);
+        //
+        // transform.Find($"Die {die}").GetComponent<DieUI>().SetMenu(true);
     }
 
     public void SetSpawned(int die, bool spawned)

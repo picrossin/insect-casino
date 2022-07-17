@@ -62,6 +62,21 @@ public class DieRoller : MonoBehaviour
         {
             _glyph = true;
         }
+
+        // Edge case
+        int dots = 0;
+        foreach (GameObject dieRoller in GameObject.FindGameObjectsWithTag("DieRoller"))
+        {
+            if (!dieRoller.GetComponent<DieRoller>()._glyph)
+            {
+                dots++;
+            }
+        }
+
+        if (dots == 2)
+        {
+            _glyph = true;
+        }
         
         transform.position = _originalPosition;
         transform.rotation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(Random.value, Random.value, Random.value));
