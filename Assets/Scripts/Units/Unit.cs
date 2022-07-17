@@ -12,11 +12,13 @@ public class Unit : MonoBehaviour
     }
 
     protected Vector2 _spriteOffset = Vector2.zero;
+    protected int _strength = 0;
 
     [SerializeField] protected GameManager.UnitType type;
     public GameManager.UnitType BugType => type;
 
-    private int _strength = 1;
+    [SerializeField] private bool showStrength = true;
+    
     private GameObject _strengthCanvas;
     private Text _strengthText;
 
@@ -53,12 +55,15 @@ public class Unit : MonoBehaviour
 
     public void ShowStrength()
     {
-        StartCoroutine(ShowStrengthAnim());
+        if (showStrength)
+        {
+            StartCoroutine(ShowStrengthAnim());
+        }
     }
 
     private IEnumerator ShowStrengthAnim()
     {
-        _strengthText.text = $"{_strength}/7";
+        _strengthText.text = $"{_strength}/6";
         _strengthCanvas.SetActive(true);
         yield return new WaitUntil(() => GameManager.Instance.State != GameManager.GameState.Upgrading);
         yield return new WaitForEndOfFrame();
@@ -74,7 +79,7 @@ public class Unit : MonoBehaviour
     {
         _strength += strengthToAdd;
 
-        if (_strength > 7)
+        if (_strength > 6)
         {
             // BUST!
             StartCoroutine(Die());

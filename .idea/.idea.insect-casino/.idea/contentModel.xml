@@ -18,6 +18,7 @@
           <e p="Projectile.cs" t="Include" />
           <e p="Units" t="Include">
             <e p="CardTower.cs" t="Include" />
+            <e p="ChipUnit.cs" t="Include" />
             <e p="ExplodingAnt.cs" t="Include" />
             <e p="GoopSnail.cs" t="Include" />
             <e p="Honeybee.cs" t="Include" />
@@ -25,6 +26,7 @@
             <e p="Spider.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
           </e>
+          <e p="Web.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

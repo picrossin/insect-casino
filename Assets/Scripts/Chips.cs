@@ -3,7 +3,7 @@ using UnityEngine;
 public class Chips : MonoBehaviour
 {
     [SerializeField] private Sprite[] frames;
-    
+
     private int _chips = 6;
     private bool _initialized;
     private SpriteRenderer _sprite;
@@ -19,6 +19,9 @@ public class Chips : MonoBehaviour
         {
             _initialized = true;
             GameManager.Instance.AddChipPile(this);
+            
+            Vector3Int tilePos = GameManager.Instance.TileGrid.WorldToCell(transform.position);
+            GameManager.Instance.GameGrid.InsertUnit(tilePos, GetComponent<ChipUnit>());
         }
     }
 
@@ -29,6 +32,7 @@ public class Chips : MonoBehaviour
         if (_chips <= 0)
         {
             GameManager.Instance.RemoveChipPile(this);
+            GameManager.Instance.GameGrid.RemoveUnit(GetComponent<ChipUnit>());
             Destroy(gameObject);
             return false;
         }
