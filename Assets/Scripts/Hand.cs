@@ -249,23 +249,31 @@ public class Hand : MonoBehaviour
 
 		bool retract = false;
 		
-		if (unitToAttack.BugType != GameManager.UnitType.Cards)
+		if (GameManager.Instance.State == GameManager.GameState.Upgrading && GameManager.Instance.UnitToUpgrade == unitToAttack)
 		{
-			unitToAttack.Die();
+			print("Frame save");
 		}
 		else
 		{
-			if (!((CardTower) unitToAttack).Hurt(1))
+			if (unitToAttack.BugType != GameManager.UnitType.Cards)
 			{
-				// _attacked = false;
+				unitToAttack.Die();
 			}
+			else
+			{
+				if (!((CardTower) unitToAttack).Hurt(1))
+				{
+					// _attacked = false;
+				}
 			
-			GameManager.Instance.ReturnChipPile(_chipGoal);
-			GameManager.Instance.HandsInPlay.Remove(this);
-			GameManager.Instance.AvailableHandAngles.Add(_angle);
-			_healthCanvas.gameObject.SetActive(false);
-			retract = true;
+				GameManager.Instance.ReturnChipPile(_chipGoal);
+				GameManager.Instance.HandsInPlay.Remove(this);
+				GameManager.Instance.AvailableHandAngles.Add(_angle);
+				_healthCanvas.gameObject.SetActive(false);
+				retract = true;
+			}
 		}
+		
 		
 		timeTaken = 0f;
 		while (timeTaken < 0.5f)
