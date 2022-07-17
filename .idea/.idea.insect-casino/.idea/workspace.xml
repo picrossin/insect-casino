@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ee4ba30-edc7-44f1-a4d2-fcab2162978a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hand.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,8 +82,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Spider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/CardTower.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
       </list>
     </option>
@@ -129,7 +130,7 @@
       <updated>1657929910868</updated>
       <workItem from="1657929915738" duration="22300000" />
       <workItem from="1657985288337" duration="47326000" />
-      <workItem from="1658048501454" duration="23322000" />
+      <workItem from="1658048501454" duration="24671000" />
     </task>
     <servers />
   </component>
@@ -230,31 +231,31 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="512" y="254" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1050@0.0.1920.1050" timestamp="1658032274100" />
-    <state x="1159" y="328" width="644" height="534" key="find.popup" timestamp="1658043896502">
+    <state x="1159" y="328" width="678" height="534" key="find.popup" timestamp="1658075435099">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1159" y="328" width="644" height="534" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658043896502" />
+    <state x="1159" y="328" width="678" height="534" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658075435099" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1658067480005">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658067480005" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1658074739622">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1658075500568">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658074739622" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658075500568" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs</url>
-          <line>371</line>
+          <line>374</line>
           <properties documentPath="D:\Jaden\Games\Unity\insect-casino\Assets\Scripts\GameManager.cs" initialLine="371">
             <startOffsets>
-              <option value="10778" />
+              <option value="10832" />
             </startOffsets>
             <endOffsets>
-              <option value="10798" />
+              <option value="10852" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />

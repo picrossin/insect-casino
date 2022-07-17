@@ -245,7 +245,10 @@ public class GameManager : MonoBehaviour
 
     public void ReturnChipPile(Chips chipPile)
     {
-        _chipTargets.Add(chipPile);
+        if (chipPile != null)
+        {
+            _chipTargets.Add(chipPile);
+        }
     }
 
     public void MakeUnit(DieRoller dieToRoll)

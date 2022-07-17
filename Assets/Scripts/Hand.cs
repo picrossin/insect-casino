@@ -143,6 +143,14 @@ public class Hand : MonoBehaviour
 				{
 					StartCoroutine(AttackPlayer(playerColl.GetComponent<Unit>()));
 				}
+				else if (_chipGoal == null)
+				{
+					_state = HandState.Retracting;
+					GameManager.Instance.HandsInPlay.Remove(this);
+					GameManager.Instance.AvailableHandAngles.Add(_angle);
+					_healthCanvas.gameObject.SetActive(false);
+					GetComponent<CircleCollider2D>().enabled = false;
+				}
 				else if (Vector2.Distance(transform.position, _chipGoal.transform.position) <= 0.5f)
 				{
 					transform.position = _chipGoal.transform.position;
@@ -175,7 +183,8 @@ public class Hand : MonoBehaviour
 			case HandState.Grabbing:
 				if (_chipGoal.TakeChip())
 				{
-					GameManager.Instance.ReturnChipPile(_chipGoal);
+					GameManager.Instance.
+						ReturnChipPile(_chipGoal);
 				}
 				_sprite.sprite = grabSprite;
 				_state = HandState.Retracting;
