@@ -207,6 +207,7 @@ public class Hand : MonoBehaviour
 
 		if (_health <= 0)
 		{
+			GameManager.Instance.ReturnChipPile(_chipGoal);
 			GameManager.Instance.HandsInPlay.Remove(this);
 			GameManager.Instance.AvailableHandAngles.Add(_angle);
 			_healthCanvas.gameObject.SetActive(false);
@@ -246,14 +247,24 @@ public class Hand : MonoBehaviour
 		transform.position = newPos;
 		yield return new WaitForSeconds(0.25f);
 
+		bool retract = false;
+		
 		if (unitToAttack.BugType != GameManager.UnitType.Cards)
 		{
 			unitToAttack.Die();
 		}
 		else
 		{
-			((CardTower) unitToAttack).Hurt(1);
-			_attacked = false;
+			if (!((CardTower) unitToAttack).Hurt(1))
+			{
+				// _attacked = false;
+			}
+			
+			GameManager.Instance.ReturnChipPile(_chipGoal);
+			GameManager.Instance.HandsInPlay.Remove(this);
+			GameManager.Instance.AvailableHandAngles.Add(_angle);
+			_healthCanvas.gameObject.SetActive(false);
+			retract = true;
 		}
 		
 		timeTaken = 0f;
@@ -267,6 +278,6 @@ public class Hand : MonoBehaviour
 		transform.position = originalPos;
 
 		_sprite.sprite = reachSprite;
-		_state = HandState.ReachingIn;
+		_state = retract ? HandState.Retracting : HandState.ReachingIn;
 	}
 }

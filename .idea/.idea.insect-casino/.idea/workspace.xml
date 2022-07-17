@@ -24,14 +24,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScreenShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScreenShake.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/CardTower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/CardTower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/ExplodingAnt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/ExplodingAnt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Honeybee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Honeybee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Spider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Spider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,15 +78,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScreenShake.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Honeybee.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/ExplodingAnt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Spider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/CardTower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/CardTower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
       </list>
     </option>
   </component>
@@ -139,7 +132,7 @@
       <updated>1657929910868</updated>
       <workItem from="1657929915738" duration="22300000" />
       <workItem from="1657985288337" duration="47326000" />
-      <workItem from="1658048501454" duration="20899000" />
+      <workItem from="1658048501454" duration="22800000" />
     </task>
     <servers />
   </component>
@@ -168,38 +161,38 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="490" height="466" key="DebuggerActiveHint/0.0.1920.1050@0.0.1920.1050" timestamp="1658034756052" />
-    <state width="1877" height="144" key="GridCell.Tab.0.bottom" timestamp="1658056226322">
+    <state width="1877" height="144" key="GridCell.Tab.0.bottom" timestamp="1658073553224">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1658056226322" />
-    <state width="1877" height="144" key="GridCell.Tab.0.center" timestamp="1658056226322">
+    <state width="1877" height="144" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1658073553224" />
+    <state width="1877" height="144" key="GridCell.Tab.0.center" timestamp="1658073553223">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1658056226322" />
-    <state width="1877" height="144" key="GridCell.Tab.0.left" timestamp="1658056226322">
+    <state width="1877" height="144" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1658073553223" />
+    <state width="1877" height="144" key="GridCell.Tab.0.left" timestamp="1658073553223">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1658056226322" />
-    <state width="1877" height="144" key="GridCell.Tab.0.right" timestamp="1658056226322">
+    <state width="1877" height="144" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1658073553223" />
+    <state width="1877" height="144" key="GridCell.Tab.0.right" timestamp="1658073553223">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1658056226322" />
-    <state width="1877" height="144" key="GridCell.Tab.1.bottom" timestamp="1658056226322">
+    <state width="1877" height="144" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1658073553223" />
+    <state width="1877" height="144" key="GridCell.Tab.1.bottom" timestamp="1658073566365">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1658056226322" />
-    <state width="1877" height="144" key="GridCell.Tab.1.center" timestamp="1658056226322">
+    <state width="1877" height="144" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1658073566365" />
+    <state width="1877" height="144" key="GridCell.Tab.1.center" timestamp="1658073566365">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1658056226322" />
-    <state width="1877" height="144" key="GridCell.Tab.1.left" timestamp="1658056226322">
+    <state width="1877" height="144" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1658073566365" />
+    <state width="1877" height="144" key="GridCell.Tab.1.left" timestamp="1658073566365">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1658056226322" />
-    <state width="1877" height="144" key="GridCell.Tab.1.right" timestamp="1658056226322">
+    <state width="1877" height="144" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1658073566365" />
+    <state width="1877" height="144" key="GridCell.Tab.1.right" timestamp="1658073566365">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1658056226322" />
+    <state width="1877" height="144" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1658073566365" />
     <state width="1877" height="144" key="GridCell.Tab.2.bottom" timestamp="1658056226322">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -252,5 +245,24 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658072035480" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs</url>
+          <line>371</line>
+          <properties documentPath="D:\Jaden\Games\Unity\insect-casino\Assets\Scripts\GameManager.cs" initialLine="371">
+            <startOffsets>
+              <option value="10778" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10798" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

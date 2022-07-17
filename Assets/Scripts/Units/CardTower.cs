@@ -16,18 +16,21 @@ public class CardTower : Unit
 		_strength = 6;
 	}
 	
-	public void Hurt(int dmg)
+	public bool Hurt(int dmg)
 	{
 		_strength = Mathf.Max(_strength - dmg, 0);
 		if (_strength <= 0)
 		{
 			Die();
+			return true;
 		}
 		else
 		{
 			Instantiate(smash, transform.position, Quaternion.identity);
 			_spriteRenderer.sprite = sprites[_strength - 1];
 		}
+
+		return false;
 	}
 	
 	protected override IEnumerator AddStrengthAnim(int strengthToAdd)
