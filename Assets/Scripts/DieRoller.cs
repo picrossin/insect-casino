@@ -56,7 +56,7 @@ public class DieRoller : MonoBehaviour
     public void Spin()
     {
         _spinning = true;
-        _glyph = Random.value > 1f / 3f;
+        _glyph = Random.value > 0.45f;
 
         if (GameManager.Instance.GameGrid.GetAllUnits(true).Count == 0)
         {

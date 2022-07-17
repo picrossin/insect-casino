@@ -354,7 +354,7 @@ public class GameManager : MonoBehaviour
             _handWaitTime *= 0.975f;
 
             Chips goal = GetChipPile();
-            if (goal != null)
+            if (goal != null && _availableHandAngles.Count > 0)
             {
                 Instantiate(hands[Random.Range(0, hands.Length)], goal.transform.position, Quaternion.identity).GetComponent<Hand>().ChipGoal = goal;
             }

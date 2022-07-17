@@ -101,5 +101,5 @@ MonoBehaviour:
   projDestroyers:
     serializedVersion: 2
     m_Bits: 64
-  dmg: 3
+  dmg: 2
   isSlime: 0
