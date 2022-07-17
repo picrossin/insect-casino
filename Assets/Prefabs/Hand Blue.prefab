@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a6a9996a76378428d7f5af56fea907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reachSpeed: 0.02
+  reachSpeed: 0.023
   ReachSpeedModifier: 0
   retractSpeed: 0.1
   reachSprite: {fileID: -616634427, guid: 73e0ac125d132c84993d8abfdd5edfd0, type: 3}
