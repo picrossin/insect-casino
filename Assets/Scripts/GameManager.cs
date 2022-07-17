@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject titleUI;
     [SerializeField] private GameObject leaderboardUI;
+
+    [SerializeField] private AudioClip hiHat;
+    [SerializeField] private AudioClip mainTrack;
     
     [SerializeField] private Grid grid;
     public Grid TileGrid => grid;
@@ -102,6 +105,7 @@ public class GameManager : MonoBehaviour
     private List<Chips> _chipTargets = new List<Chips>();
     private HashSet<Chips> _chipPiles = new HashSet<Chips>();
     private Text _scoreText;
+    private AudioSource _music;
     private float _score;
     private bool _gameInitialized;
     private bool _titleInitialized;
@@ -113,6 +117,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         _scoreText = gameUI.transform.Find("ScoreText").GetComponent<Text>();
+        _music = GetComponent<AudioSource>();
         
         _state = GameState.Normal;
         _programState = ProgramState.Title;
@@ -128,6 +133,8 @@ public class GameManager : MonoBehaviour
                     gameUI.SetActive(false);
                     titleUI.SetActive(true);
                     titleUI.GetComponent<Animation>().Play("TitleIn");
+                    _music.clip = hiHat;
+                    _music.Play();
                     _titleInitialized = true;
                 }
                 break;
@@ -140,6 +147,8 @@ public class GameManager : MonoBehaviour
                     _keepScore = true;
                     StartCoroutine(ProduceDice());
                     StartCoroutine(SpawnHands());
+                    _music.clip = mainTrack;
+                    _music.Play();
                     _gameInitialized = true;
                 }
                 else
@@ -158,6 +167,8 @@ public class GameManager : MonoBehaviour
                     leaderboardUI.GetComponent<Animation>().Play("In");
                     leaderboardUI.transform.Find("Leaderboard/MyScore").GetComponent<TextMeshProUGUI>().text =
                         Mathf.FloorToInt(_score).ToString();
+                    _music.clip = hiHat;
+                    _music.Play();
                     _leaderboardInitialized = true;
                 }
                 break;
