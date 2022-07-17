@@ -1,9 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
+    public enum ProgramState
+    {
+        Title,
+        Game,
+        Leaderboard
+    }
+    
     public enum GameState
     {
         Normal,
@@ -30,6 +39,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float produceTime = 10f;
     [SerializeField] private DieUIManager dieUIManager;
     [SerializeField] private GameObject[] hands;
+    [SerializeField] private GameObject gameUI;
+    [SerializeField] private GameObject titleUI;
     
     [SerializeField] private Grid grid;
     public Grid TileGrid => grid;
@@ -42,6 +53,13 @@ public class GameManager : MonoBehaviour
     {
         get => _state;
         set => _state = value;
+    }
+    
+    private ProgramState _programState;
+    public ProgramState CurrentProgramState
+    {
+        get => _programState;
+        set => _programState = value;
     }
 
     private bool _dieReady;
@@ -80,15 +98,57 @@ public class GameManager : MonoBehaviour
     private float _handWaitTime = 5f;
     private List<Chips> _chipTargets = new List<Chips>();
     private HashSet<Chips> _chipPiles = new HashSet<Chips>();
+    private bool _gameInitialized;
+    private bool _titleInitialized;
 
     private void Start()
     {
         Instance = this;
         
         _state = GameState.Normal;
+        _programState = ProgramState.Title;
+    }
 
-        StartCoroutine(ProduceDice());
-        StartCoroutine(SpawnHands());
+    private void Update()
+    {
+        switch (_programState)
+        {
+            case ProgramState.Title:
+                if (!_titleInitialized)
+                {
+                    gameUI.SetActive(false);
+                    titleUI.SetActive(true);
+                    titleUI.GetComponent<Animation>().Play("TitleIn");
+                    _titleInitialized = true;
+                }
+                break;
+            case ProgramState.Game:
+                if (!_gameInitialized)
+                {
+                    gameUI.SetActive(true);
+                    _state = GameState.Normal;
+                    StartCoroutine(ProduceDice());
+                    StartCoroutine(SpawnHands());
+                    _gameInitialized = true;
+                }
+                break;
+            case ProgramState.Leaderboard:
+                break;
+        }
+    }
+
+    public void PlayGame()
+    {
+        StartCoroutine(TitleScreenOutAnim());
+        _programState = ProgramState.Game;
+        _gameInitialized = false;
+    }
+
+    private IEnumerator TitleScreenOutAnim()
+    {
+        titleUI.GetComponent<Animation>().Play("TitleOut");
+        yield return new WaitForSeconds(1f);
+        titleUI.SetActive(false);
     }
 
     public void AddChipPile(Chips chipPile)

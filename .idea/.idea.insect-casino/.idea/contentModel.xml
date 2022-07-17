@@ -16,6 +16,7 @@
           <e p="GameManager.cs" t="Include" />
           <e p="Hand.cs" t="Include" />
           <e p="Projectile.cs" t="Include" />
+          <e p="TitleSignAnim.cs" t="Include" />
           <e p="Units" t="Include">
             <e p="CardTower.cs" t="Include" />
             <e p="ChipUnit.cs" t="Include" />
