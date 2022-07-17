@@ -15,6 +15,7 @@
           <e p="GameGrid.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Hand.cs" t="Include" />
+          <e p="Projectile.cs" t="Include" />
           <e p="Units" t="Include">
             <e p="CardTower.cs" t="Include" />
             <e p="ExplodingAnt.cs" t="Include" />

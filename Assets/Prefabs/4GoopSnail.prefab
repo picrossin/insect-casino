@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
+  baseShootTime: 12
+  projectile: {fileID: 8675985323126510976, guid: 434b3c4eb2a8a0149b03ec6ef1be3f18, type: 3}
 --- !u!1001 &1164289990712137262
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 1.5}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2657477525973860674
@@ -191,9 +191,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2959213510025517517}
   - component: {fileID: 9148832162009308743}
-  m_Layer: 0
+  - component: {fileID: 7036088764219239270}
+  m_Layer: 6
   m_Name: Hand Purple
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,6 +233,22 @@ MonoBehaviour:
   reachSprite: {fileID: 1183649713, guid: 4fc61fa5234c5b34aa0b317224747bdd, type: 3}
   grabSprite: {fileID: 1004432934, guid: 4fc61fa5234c5b34aa0b317224747bdd, type: 3}
   slamSprite: {fileID: -2109669040, guid: 4fc61fa5234c5b34aa0b317224747bdd, type: 3}
+--- !u!58 &7036088764219239270
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703435096521864650}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07, y: 0.1}
+  serializedVersion: 2
+  m_Radius: 0.75
 --- !u!1 &7226141539793083631
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +321,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 50
   m_Sprite: {fileID: 1183649713, guid: 4fc61fa5234c5b34aa0b317224747bdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

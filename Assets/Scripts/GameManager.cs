@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    [SerializeField] private bool debugForceUnitType;
+    [SerializeField] private UnitType debugUnitType;
+    
     [SerializeField] private GameObject[] units; 
     [SerializeField] private float produceTime = 10f;
     [SerializeField] private DieUIManager dieUIManager;
@@ -60,11 +63,16 @@ public class GameManager : MonoBehaviour
 
     private bool _busy;
     public bool Busy => _busy;
-
-    private HashSet<Chips> _chipPiles = new HashSet<Chips>();
+    
+    private HashSet<Hand> _handsInPlay = new HashSet<Hand>();
+    public HashSet<Hand> HandsInPlay => _handsInPlay;
+    
+    private HashSet<float> _availableHandAngles = new HashSet<float> {0f, 45f, 90f, 135f, 180f, 225f, 270f, 315f};
+    public HashSet<float> AvailableHandAngles => _availableHandAngles;
 
     private float _handWaitTime = 5f;
     private List<Chips> _chipTargets = new List<Chips>();
+    private HashSet<Chips> _chipPiles = new HashSet<Chips>();
 
     private void Start()
     {
@@ -117,7 +125,7 @@ public class GameManager : MonoBehaviour
         
         yield return new WaitForSeconds(0.25f); // Buffer for velocity
         yield return new WaitUntil(() => dieRb.velocity.magnitude <= float.Epsilon && dieRb.angularVelocity.magnitude <= float.Epsilon);
-        Unit newUnit = Instantiate(units[dieToRoll.GetDieSide() - 1], 
+        Unit newUnit = Instantiate(units[debugForceUnitType ? (int) debugUnitType - 1 : dieToRoll.GetDieSide() - 1], 
             TileGrid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition)) + new Vector3(0.5f, 1.5f, 0.0f), 
             Quaternion.identity).GetComponent<Unit>();
         newUnit.Placing = true;
