@@ -24,11 +24,13 @@ public class Unit : MonoBehaviour
     
     private GameObject _strengthCanvas;
     private Text _strengthText;
+    private StrengthBar _strengthBar;
 
     protected void Start()
     {
         _strengthCanvas = transform.Find("HealthCanvas").gameObject;
         _strengthText = _strengthCanvas.GetComponentInChildren<Text>();
+        _strengthBar = _strengthCanvas.GetComponentInChildren<StrengthBar>();
     }
 
     private void Update()
@@ -67,8 +69,9 @@ public class Unit : MonoBehaviour
 
     private IEnumerator ShowStrengthAnim()
     {
-        _strengthText.text = $"{_strength}/6";
         _strengthCanvas.SetActive(true);
+        _strengthText.text = $"{_strength}/6";
+        _strengthBar.SetStrength(_strength);
         yield return new WaitUntil(() => GameManager.Instance.State != GameManager.GameState.Upgrading);
         yield return new WaitForEndOfFrame();
         _strengthCanvas.SetActive(false);

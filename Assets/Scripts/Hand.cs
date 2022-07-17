@@ -51,6 +51,7 @@ public class Hand : MonoBehaviour
 
 	private SpriteRenderer _sprite;
 	private Transform _healthCanvas;
+	private StrengthBar _healthBar;
 	private float _angle;
 	private int _health = 6;
 	private bool _attacked;
@@ -60,6 +61,7 @@ public class Hand : MonoBehaviour
 		_state = HandState.Spawning;
 		_sprite = transform.Find("Sprite").GetComponent<SpriteRenderer>();
 		_healthCanvas = transform.Find("HealthCanvas");
+		_healthBar = _healthCanvas.GetComponentInChildren<StrengthBar>();
 	}
 	
 	private void FixedUpdate()
@@ -134,6 +136,7 @@ public class Hand : MonoBehaviour
 					_state = HandState.Grabbing;
 				}
 				break;
+			
 			case HandState.Attacking:
 				Collider2D coll1 = Physics2D.OverlapCircle(transform.position, 0.75f, handHurter);
 
@@ -177,7 +180,7 @@ public class Hand : MonoBehaviour
 		_health = Mathf.Max(_health - dmg, 0);
 		_queueDamage = 0;
 		_healthCanvas.Find("HealthText").GetComponent<Text>().text = $"{_health}/6";
-		
+		_healthBar.SetStrength(_health);
 		yield return new WaitForSeconds(0.25f);
 		_state = HandState.ReachingIn;
 	}

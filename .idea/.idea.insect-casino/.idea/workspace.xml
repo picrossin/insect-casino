@@ -22,22 +22,19 @@
     <list default="true" id="9ee4ba30-edc7-44f1-a4d2-fcab2162978a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.insect-casino/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/1CardTower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/1CardTower.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/2ExplodingAnt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/2ExplodingAnt.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/3ShooterWorm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/3ShooterWorm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/4GoopSnail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/4GoopSnail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/5Honeybee.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/5Honeybee.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/6Spider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/6Spider.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chips.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chips.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/invasion2000.regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/invasion2000.regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DieUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DieUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hand Blue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hand Blue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hand Grey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hand Grey.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hand Purple.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hand Purple.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hand Red.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hand Red.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HealthCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HealthCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chips.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chips.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/ExplodingAnt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/ExplodingAnt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/ShooterWorm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Spider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Spider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/enemy_health_bar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/enemy_health_bar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/strength_bar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/strength_bar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DieUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Units/Spider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameGrid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StrengthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cursor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DieUIManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -69,7 +67,6 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/DieUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DieUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cursor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Web.cs" />
@@ -77,7 +74,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/ChipUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Honeybee.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/CardTower.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TitleSignAnim.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Leaderboard/HighScores.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Leaderboard/SaveData.cs" />
@@ -88,9 +84,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/GoopSnail.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DieRoller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/ExplodingAnt.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonSoundHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Spider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DieUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StrengthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
       </list>
     </option>
   </component>
@@ -116,10 +115,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="35036">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="35036" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -136,7 +135,7 @@
       <updated>1657929910868</updated>
       <workItem from="1657929915738" duration="22300000" />
       <workItem from="1657985288337" duration="47326000" />
-      <workItem from="1658048501454" duration="2506000" />
+      <workItem from="1658048501454" duration="4477000" />
     </task>
     <servers />
   </component>
@@ -165,38 +164,38 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="490" height="466" key="DebuggerActiveHint/0.0.1920.1050@0.0.1920.1050" timestamp="1658034756052" />
-    <state width="1877" height="144" key="GridCell.Tab.0.bottom" timestamp="1658048485895">
+    <state width="1877" height="144" key="GridCell.Tab.0.bottom" timestamp="1658052877375">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1658048485895" />
-    <state width="1877" height="144" key="GridCell.Tab.0.center" timestamp="1658048485895">
+    <state width="1877" height="144" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1658052877375" />
+    <state width="1877" height="144" key="GridCell.Tab.0.center" timestamp="1658052877375">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1658048485895" />
-    <state width="1877" height="144" key="GridCell.Tab.0.left" timestamp="1658048485895">
+    <state width="1877" height="144" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1658052877375" />
+    <state width="1877" height="144" key="GridCell.Tab.0.left" timestamp="1658052877375">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1658048485895" />
-    <state width="1877" height="144" key="GridCell.Tab.0.right" timestamp="1658048485895">
+    <state width="1877" height="144" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1658052877375" />
+    <state width="1877" height="144" key="GridCell.Tab.0.right" timestamp="1658052877375">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1658048485895" />
-    <state width="1877" height="144" key="GridCell.Tab.1.bottom" timestamp="1658048485896">
+    <state width="1877" height="144" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1658052877375" />
+    <state width="1877" height="144" key="GridCell.Tab.1.bottom" timestamp="1658052897122">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1658048485896" />
-    <state width="1877" height="144" key="GridCell.Tab.1.center" timestamp="1658048485896">
+    <state width="1877" height="144" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1658052897122" />
+    <state width="1877" height="144" key="GridCell.Tab.1.center" timestamp="1658052897122">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1658048485896" />
-    <state width="1877" height="144" key="GridCell.Tab.1.left" timestamp="1658048485896">
+    <state width="1877" height="144" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1658052897122" />
+    <state width="1877" height="144" key="GridCell.Tab.1.left" timestamp="1658052897122">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1658048485896" />
-    <state width="1877" height="144" key="GridCell.Tab.1.right" timestamp="1658048485896">
+    <state width="1877" height="144" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1658052897122" />
+    <state width="1877" height="144" key="GridCell.Tab.1.right" timestamp="1658052897122">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="144" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1658048485896" />
+    <state width="1877" height="144" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1658052897122" />
     <state width="1877" height="144" key="GridCell.Tab.2.bottom" timestamp="1658048485896">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -241,9 +240,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1159" y="328" width="644" height="534" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658043896502" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1658051015821">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1658053650203">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658051015821" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1658053650203" />
   </component>
 </project>

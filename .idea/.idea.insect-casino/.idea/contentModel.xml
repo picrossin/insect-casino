@@ -23,6 +23,7 @@
             <e p="SaveData.cs" t="Include" />
           </e>
           <e p="Projectile.cs" t="Include" />
+          <e p="StrengthBar.cs" t="Include" />
           <e p="TitleSignAnim.cs" t="Include" />
           <e p="Units" t="Include">
             <e p="CardTower.cs" t="Include" />
