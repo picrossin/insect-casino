@@ -14,6 +14,9 @@ public class Hand : MonoBehaviour
 
 	[SerializeField] private float reachSpeed = 0.1f;
 	[SerializeField] private float retractSpeed = 0.1f;
+	[SerializeField] private Sprite reachSprite;
+	[SerializeField] private Sprite grabSprite;
+	[SerializeField] private Sprite slamSprite;
 	
 	private Chips _chipGoal;
 	public Chips ChipGoal
@@ -23,10 +26,13 @@ public class Hand : MonoBehaviour
 	}
 
 	private HandState _state;
+	private float[] _anglesTest = new[] {0f, 45f, 90f, 135f, 180f, 225f, 270f, 315f};
+	private SpriteRenderer _sprite;
 
 	private void Start()
 	{
 		_state = HandState.Spawning;
+		_sprite = transform.Find("Sprite").GetComponent<SpriteRenderer>();
 	}
 	
 	private void FixedUpdate()
@@ -58,8 +64,8 @@ public class Hand : MonoBehaviour
 		{
 			case HandState.Spawning:
 				transform.position = _chipGoal.transform.position;
-				transform.rotation = Quaternion.AngleAxis(Random.Range(0f, 360f), Vector3.back);
-				transform.position = transform.right * 16f;
+				transform.rotation = Quaternion.AngleAxis(_anglesTest[Random.Range(0, _anglesTest.Length)], Vector3.back);
+				transform.position += transform.right * 16f;
 				transform.Find("Sprite").gameObject.SetActive(true);
 				_state = HandState.ReachingIn;
 				break;
@@ -73,11 +79,15 @@ public class Hand : MonoBehaviour
 			case HandState.Attacking:
 				break;
 			case HandState.Grabbing:
-				// TODO: Change sprite and subtract chip, add chip target back
+				if (_chipGoal.TakeChip())
+				{
+					GameManager.Instance.ReturnChipPile(_chipGoal);
+				}
+				_sprite.sprite = grabSprite;
 				_state = HandState.Retracting;
 				break;
 			case HandState.Retracting:
-				if (Vector2.Distance(transform.position, _chipGoal.transform.position) > 16f)
+				if (Vector2.Distance(transform.position, Vector2.zero) > 16f)
 				{
 					Destroy(gameObject);
 				}

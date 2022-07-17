@@ -7,15 +7,18 @@ public class DieRoller : MonoBehaviour
     [SerializeField] private float dieLaunchMultiplier = 100f;
     [SerializeField] private LayerMask floorMask;
     [SerializeField] private int dieNum;
+    [SerializeField] private Texture glyphTex;
 
     private Rigidbody _rigidbody;
     private bool _spinning;
     private Vector3 _originalPosition;
+    private Texture _numTex;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _originalPosition = transform.position;
+        _numTex = GetComponent<Renderer>().material.mainTexture;
         Spin();
     }
 
@@ -27,12 +30,17 @@ public class DieRoller : MonoBehaviour
         }
     }
     
-    public void Throw()
+    public void Throw(bool glyphs=false)
     {
         _spinning = false;
         _rigidbody.useGravity = true;
         _rigidbody.isKinematic = false;
 
+        if (glyphs)
+        {
+            GetComponent<Renderer>().material.mainTexture = glyphTex;
+        }
+        
         Vector3 randDir = Random.insideUnitCircle.normalized;
         randDir = new Vector3(-Mathf.Abs(randDir.x), Mathf.Abs(randDir.y));
         
@@ -48,6 +56,7 @@ public class DieRoller : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0f, 0.5f, 0.5f));
         _rigidbody.useGravity = false;
         _rigidbody.isKinematic = true;
+        GetComponent<Renderer>().material.mainTexture = _numTex;
     }
 
     public void SetSpawned(bool spawned)
