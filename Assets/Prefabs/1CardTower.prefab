@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6065205182800126866}
   - component: {fileID: 5409568076049021649}
-  - component: {fileID: 211264778558457742}
   - component: {fileID: 774865058081590907}
-  m_Layer: 0
+  - component: {fileID: 6975718774000644052}
+  m_Layer: 8
   m_Name: 1CardTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,26 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &211264778558457742
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3610900605576220565}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a552aaaedc6ae8047a124ba1b8bc6942, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &774865058081590907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +100,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  showStrength: 1
+  sprites:
+  - {fileID: 1609328591, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}
+  - {fileID: -841525916, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}
+  - {fileID: -472058526, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}
+  - {fileID: -1559869789, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}
+  - {fileID: 376020087, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}
+  - {fileID: 1611747432, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}
+--- !u!61 &6975718774000644052
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610900605576220565}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1001 &7771729252605216633
 PrefabInstance:
   m_ObjectHideFlags: 0

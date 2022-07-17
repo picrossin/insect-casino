@@ -2396,8 +2396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bd731183fc9cb4d874fac86eb9ab42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugForceUnitType: 1
-  debugUnitType: 5
+  debugForceUnitType: 0
+  debugUnitType: 1
   units:
   - {fileID: 3610900605576220565, guid: 32d4cec212a9dd941b9decb5f8cd4733, type: 3}
   - {fileID: 3610900605576220565, guid: 4dbd36b64baa55047ad83d40baffa40f, type: 3}

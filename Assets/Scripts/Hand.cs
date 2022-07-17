@@ -21,6 +21,7 @@ public class Hand : MonoBehaviour
 	[SerializeField] private Sprite grabSprite;
 	[SerializeField] private Sprite slamSprite;
 	[SerializeField] private LayerMask handHurter;
+	[SerializeField] private LayerMask playerMask;
 	
 	private Chips _chipGoal;
 	public Chips ChipGoal
@@ -52,6 +53,7 @@ public class Hand : MonoBehaviour
 	private Transform _healthCanvas;
 	private float _angle;
 	private int _health = 6;
+	private bool _attacked;
 
 	private void Start()
 	{
@@ -105,6 +107,7 @@ public class Hand : MonoBehaviour
 				break;
 			case HandState.ReachingIn:
 				Collider2D coll = Physics2D.OverlapCircle(transform.position, 0.75f, handHurter);
+				Collider2D playerColl = Physics2D.OverlapCircle(transform.position, 0.75f, playerMask);
 
 				if (coll != null)
 				{
@@ -120,8 +123,12 @@ public class Hand : MonoBehaviour
 				{
 					StartCoroutine(Slowdown());
 				}
-				
-				if (Vector2.Distance(transform.position, _chipGoal.transform.position) <= 0.5f)
+
+				if (!_attacked && playerColl != null)
+				{
+					StartCoroutine(AttackPlayer(playerColl.GetComponent<Unit>()));
+				}
+				else if (Vector2.Distance(transform.position, _chipGoal.transform.position) <= 0.5f)
 				{
 					transform.position = _chipGoal.transform.position;
 					_state = HandState.Grabbing;
@@ -182,5 +189,50 @@ public class Hand : MonoBehaviour
 		reachSpeed = originalSpeed / 2f;
 		yield return new WaitForSeconds(SLOWDOWN_TIME);
 		reachSpeed = originalSpeed;
+	}
+
+	private IEnumerator AttackPlayer(Unit unitToAttack)
+	{
+		if (unitToAttack.Placing) yield break;
+
+		_state = HandState.Attacking;
+		_attacked = true;
+		_sprite.sprite = slamSprite;
+		
+		// TODO: Play slam anim
+		Vector3 originalPos = transform.position;
+		Vector3 newPos = unitToAttack.transform.position;
+		float timeTaken = 0f;
+		while (timeTaken < 0.5f)
+		{
+			transform.position = Vector3.Slerp(originalPos, newPos, timeTaken / 0.5f);
+			yield return new WaitForEndOfFrame();
+			timeTaken += Time.deltaTime;
+		}
+		
+		transform.position = newPos;
+		yield return new WaitForSeconds(0.25f);
+
+		if (unitToAttack.BugType != GameManager.UnitType.Cards)
+		{
+			unitToAttack.Die();
+		}
+		else
+		{
+			((CardTower) unitToAttack).Hurt(1);
+		}
+		
+		timeTaken = 0f;
+		while (timeTaken < 0.5f)
+		{
+			transform.position = Vector3.Slerp(newPos, originalPos, timeTaken / 0.5f);
+			yield return new WaitForEndOfFrame();
+			timeTaken += Time.deltaTime;
+		}
+		
+		transform.position = originalPos;
+
+		_sprite.sprite = reachSprite;
+		_state = HandState.ReachingIn;
 	}
 }

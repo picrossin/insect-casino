@@ -75,20 +75,25 @@ public class Unit : MonoBehaviour
         StartCoroutine(AddStrengthAnim(strengthToAdd));
     }
 
-    private IEnumerator AddStrengthAnim(int strengthToAdd)
+    protected virtual IEnumerator AddStrengthAnim(int strengthToAdd)
     {
         _strength += strengthToAdd;
 
         if (_strength > 6)
         {
             // BUST!
-            StartCoroutine(Die());
+            StartCoroutine(DieAnim());
         }
         
         yield break; // TODO: Add anim
     }
 
-    private IEnumerator Die()
+    public void Die()
+    {
+        StartCoroutine(DieAnim());
+    }
+    
+    protected IEnumerator DieAnim()
     {
         // TODO: Add anim
         GameManager.Instance.GameGrid.RemoveUnit(this);
