@@ -352,7 +352,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_handWaitTime);
-            _handWaitTime *= 0.95f;
+            _handWaitTime *= 0.9f;
 
             Chips goal = GetChipPile();
             if (goal != null && _availableHandAngles.Count > 0)
@@ -361,8 +361,9 @@ public class GameManager : MonoBehaviour
                 _availableHandAngles.Remove(angle);
                 Hand hand = Instantiate(hands[Random.Range(0, hands.Length)], goal.transform.position, Quaternion.identity).GetComponent<Hand>();
                 hand.ChipGoal = goal;
-                hand.ReachSpeedModifier = Mathf.Floor(_score / 50f) * .005f;
+                hand.ReachSpeedModifier = Mathf.Floor(_score / 50f) * .01f;
                 hand.Angle = angle;
+                _handsInPlay.Add(hand);
             }
         }
     }

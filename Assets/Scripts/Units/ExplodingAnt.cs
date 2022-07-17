@@ -153,6 +153,8 @@ public class ExplodingAnt : Unit
                     }
                 }
             }
+         
+            GameManager.Instance.GameGrid.RemoveUnit(this);
 			Destroy(gameObject);
 		}
 	}
