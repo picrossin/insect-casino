@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -67,6 +66,7 @@ public class Hand : MonoBehaviour
 
 	private void Start()
 	{
+		StartCoroutine(DisableColl());
 		_state = HandState.Spawning;
 		_sprite = transform.Find("Sprite").GetComponent<SpriteRenderer>();
 		_healthCanvas = transform.Find("HealthCanvas");
@@ -299,5 +299,12 @@ public class Hand : MonoBehaviour
 
 		_sprite.sprite = reachSprite;
 		_state = retract ? HandState.Retracting : HandState.ReachingIn;
+	}
+
+	private IEnumerator DisableColl()
+	{
+		GetComponent<CircleCollider2D>().enabled = false;
+		yield return new WaitForSeconds(1f);
+		GetComponent<CircleCollider2D>().enabled = true;
 	}
 }
