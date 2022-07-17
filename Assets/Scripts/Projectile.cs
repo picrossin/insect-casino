@@ -53,6 +53,7 @@ public class Projectile : MonoBehaviour
                 
                 if (isSlime)
                 {
+                    // coll.GetComponent<Hand>().QueueDamage = dmg;
                     coll.GetComponent<Hand>().QueueSlowdown = true;
                 }
                 else

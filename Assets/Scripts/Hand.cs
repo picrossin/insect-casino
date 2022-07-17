@@ -116,8 +116,16 @@ public class Hand : MonoBehaviour
 
 				if (coll != null)
 				{
+					if (coll.CompareTag("Web"))
+					{
+						_queueDamage += 2;
+					}
+					else
+					{
+						_queueDamage += 6;
+					}
+					
 					Destroy(coll.gameObject);
-					_queueDamage += 1;
 				}
 				
 				if (_queueDamage > 0)
@@ -146,7 +154,15 @@ public class Hand : MonoBehaviour
 				if (coll1 != null)
 				{
 					Destroy(coll1.gameObject);
-					_queueDamage += 1;
+
+					if (coll1.CompareTag("Web"))
+					{
+						_queueDamage += 2;
+					}
+					else
+					{
+						_queueDamage += 6;
+					}
 				}
 				
 				if (_queueDamage > 0)

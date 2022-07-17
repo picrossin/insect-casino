@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a6a9996a76378428d7f5af56fea907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reachSpeed: 0.05
+  reachSpeed: 0.025
   retractSpeed: 0.1
   reachSprite: {fileID: 1183649713, guid: 4fc61fa5234c5b34aa0b317224747bdd, type: 3}
   grabSprite: {fileID: 1004432934, guid: 4fc61fa5234c5b34aa0b317224747bdd, type: 3}

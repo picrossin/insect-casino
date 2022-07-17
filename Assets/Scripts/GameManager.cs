@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         set => _timeWaited = value;
     }
 
-    private float _handWaitTime = 5f;
+    private float _handWaitTime = 10f;
     private List<Chips> _chipTargets = new List<Chips>();
     private HashSet<Chips> _chipPiles = new HashSet<Chips>();
     private Text _scoreText;
@@ -337,6 +337,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_handWaitTime);
+            _handWaitTime *= 0.9f;
 
             Chips goal = GetChipPile();
             if (goal != null)
