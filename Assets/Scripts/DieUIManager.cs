@@ -77,14 +77,11 @@ public class DieUIManager : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.UpgradeUnit(roller);
+            if (GameManager.Instance.GameGrid.GetAllUnits(true).Count != 0)
+            {
+                GameManager.Instance.UpgradeUnit(roller);
+            }
         }
-
-        // transform.Find("Die 1").GetComponent<DieUI>().SetMenu(false);
-        // transform.Find("Die 2").GetComponent<DieUI>().SetMenu(false);
-        // transform.Find("Die 3").GetComponent<DieUI>().SetMenu(false);
-        //
-        // transform.Find($"Die {die}").GetComponent<DieUI>().SetMenu(true);
     }
 
     public void SetSpawned(int die, bool spawned)

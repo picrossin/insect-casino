@@ -352,7 +352,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_handWaitTime);
-            _handWaitTime *= 0.9f;
+            _handWaitTime *= 0.925f;
 
             Chips goal = GetChipPile();
             if (goal != null && _availableHandAngles.Count > 0)
