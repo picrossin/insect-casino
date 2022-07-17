@@ -24,6 +24,7 @@ public class StrengthBar : MonoBehaviour
 	public void SetStrength(int str)
 	{
 		Initialize();
+		str = Mathf.Clamp(str, 0, frames.Length - 1);
 		_image.sprite = frames[str];
 	}
 }

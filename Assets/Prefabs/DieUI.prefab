@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6558890687527951267}
   - component: {fileID: 6277928791197654777}
   - component: {fileID: 1277072946060358280}
+  - component: {fileID: 8225395100007381487}
   m_Layer: 5
   m_Name: DieUI
   m_TagString: Untagged
@@ -148,6 +149,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2bbd31201d68248a7ce97a7804b5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8225395100007381487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379001393019963220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47e4cc7010aad34eb735c9a095acfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 0}
+  hover: {fileID: 0}
 --- !u!1 &3419916733294670793
 GameObject:
   m_ObjectHideFlags: 0

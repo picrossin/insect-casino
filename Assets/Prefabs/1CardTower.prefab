@@ -104,6 +104,8 @@ MonoBehaviour:
   splat: {fileID: 9087598328088165346, guid: dced79c8538dbb84391410d74357b69a, type: 3}
   place: {fileID: 9087598328088165346, guid: beb469f793b3a404aacc866f8adddc1b, type: 3}
   fortify: {fileID: 9087598328088165346, guid: ce1470d91768d414caa31538b49e7e82, type: 3}
+  bust: {fileID: 859852050215994669, guid: 1ba762599006da0489c49f18a62f2de6, type: 3}
+  smash: {fileID: 8195543005090461107, guid: e6b82656c7294594b8d050211a20f3c2, type: 3}
   sprites:
   - {fileID: 1609328591, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}
   - {fileID: -841525916, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}

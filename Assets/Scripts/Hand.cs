@@ -22,6 +22,7 @@ public class Hand : MonoBehaviour
 	[SerializeField] private Sprite slamSprite;
 	[SerializeField] private LayerMask handHurter;
 	[SerializeField] private LayerMask playerMask;
+	[SerializeField] private GameObject smash;
 	
 	private Chips _chipGoal;
 	public Chips ChipGoal
@@ -82,6 +83,7 @@ public class Hand : MonoBehaviour
 			case HandState.Grabbing:
 				break;
 			case HandState.Retracting:
+				_sprite.color = Color.gray;
 				transform.position += transform.right * retractSpeed;
 				break;
 			case HandState.Hurting:
@@ -181,8 +183,10 @@ public class Hand : MonoBehaviour
 		_queueDamage = 0;
 		_healthCanvas.Find("HealthText").GetComponent<Text>().text = $"{_health}/6";
 		_healthBar.SetStrength(_health);
+		Instantiate(smash, transform.position, Quaternion.identity);
 		yield return new WaitForSeconds(0.25f);
-		_state = HandState.ReachingIn;
+
+		_state = _health > 0 ? HandState.ReachingIn : HandState.Retracting;
 	}
 
 	private IEnumerator Slowdown()
@@ -202,7 +206,6 @@ public class Hand : MonoBehaviour
 		_attacked = true;
 		_sprite.sprite = slamSprite;
 		
-		// TODO: Play slam anim
 		Vector3 originalPos = transform.position;
 		Vector3 newPos = unitToAttack.transform.position;
 		float timeTaken = 0f;

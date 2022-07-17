@@ -240,6 +240,7 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 256
+  smash: {fileID: 8195543005090461107, guid: a047f5168deead3448c44391de8a51bf, type: 3}
 --- !u!58 &5731076589700174018
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,6 +6,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+
+[Serializable]
+public class Helper
+{
+    public Sprite sprite;
+    public string text;
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -44,6 +52,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject titleUI;
     [SerializeField] private GameObject leaderboardUI;
+    [SerializeField] private HelpBox helpBox;
+    [SerializeField] private Helper[] helpers;
 
     [SerializeField] private AudioClip hiHat;
     [SerializeField] private AudioClip mainTrack;
@@ -182,6 +192,16 @@ public class GameManager : MonoBehaviour
         _gameInitialized = false;
     }
 
+    public void TutorialIn()
+    {
+        titleUI.GetComponent<Animation>().Play("TutorialIn");
+    }
+
+    public void TutorialOut()
+    {
+        titleUI.GetComponent<Animation>().Play("TutorialOut");
+    }
+
     public void BackToTitle()
     {
         StartCoroutine(LeaderboardOutAnim());
@@ -248,12 +268,14 @@ public class GameManager : MonoBehaviour
             TileGrid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition)) + new Vector3(0.5f, 1.5f, 0.0f), 
             Quaternion.identity).GetComponent<Unit>();
         newUnit.Placing = true;
+        helpBox.SetHelp(helpers[(int)newUnit.BugType - 1].sprite, helpers[(int)newUnit.BugType - 1].text);
         _state = GameState.Placing;
         yield return new WaitForSeconds(1f);
         dieToRoll.Spin();
         dieToRoll.SetSpawned(false);
         dieToRoll.transform.parent.gameObject.SetActive(false);
         yield return new WaitUntil(() => !newUnit.Placing);
+        helpBox.Dismiss();
         _state = GameState.Normal;
         
         _busy = false;
