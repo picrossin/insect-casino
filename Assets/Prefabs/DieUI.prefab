@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 1888916744680698035}
   - component: {fileID: 5106594884580116486}
   - component: {fileID: 8619173130957319523}
+  - component: {fileID: 645458464927970308}
   m_Layer: 5
   m_Name: Upgrade Unit Button
   m_TagString: Untagged
@@ -495,6 +496,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &645458464927970308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476610777772444330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47e4cc7010aad34eb735c9a095acfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 9087598328088165346, guid: 787be1c023da50e44b5f7949ad4569c1, type: 3}
+  hover: {fileID: 9087598328088165346, guid: 4ab1dfdda5a6cfa4791ce2f21a1dc4a5, type: 3}
 --- !u!1 &7782258894477127429
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +657,7 @@ GameObject:
   - component: {fileID: 4780555839382358915}
   - component: {fileID: 8741006898288574140}
   - component: {fileID: 3603208611992972532}
+  - component: {fileID: 108506210457311465}
   m_Layer: 5
   m_Name: Make Unit Button
   m_TagString: Untagged
@@ -776,3 +792,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &108506210457311465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089696962251508189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47e4cc7010aad34eb735c9a095acfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 9087598328088165346, guid: 787be1c023da50e44b5f7949ad4569c1, type: 3}
+  hover: {fileID: 9087598328088165346, guid: 4ab1dfdda5a6cfa4791ce2f21a1dc4a5, type: 3}

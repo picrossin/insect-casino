@@ -7,14 +7,21 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="ButtonSoundHandler.cs" t="Include" />
           <e p="Chips.cs" t="Include" />
           <e p="Cursor.cs" t="Include" />
+          <e p="DestroyAfterSecs.cs" t="Include" />
           <e p="DieRoller.cs" t="Include" />
           <e p="DieUI.cs" t="Include" />
           <e p="DieUIManager.cs" t="Include" />
           <e p="GameGrid.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Hand.cs" t="Include" />
+          <e p="Leaderboard" t="Include">
+            <e p="DisplayHighscores.cs" t="Include" />
+            <e p="HighScores.cs" t="Include" />
+            <e p="SaveData.cs" t="Include" />
+          </e>
           <e p="Projectile.cs" t="Include" />
           <e p="TitleSignAnim.cs" t="Include" />
           <e p="Units" t="Include">

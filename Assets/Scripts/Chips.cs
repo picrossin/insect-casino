@@ -3,6 +3,7 @@ using UnityEngine;
 public class Chips : MonoBehaviour
 {
     [SerializeField] private Sprite[] frames;
+    [SerializeField] private GameObject pinchSound;
 
     private int _chips = 6;
     private bool _initialized;
@@ -28,6 +29,7 @@ public class Chips : MonoBehaviour
     public bool TakeChip()
     {
         _chips--;
+        Instantiate(pinchSound, transform.position, Quaternion.identity);
 
         if (_chips <= 0)
         {

@@ -5,6 +5,7 @@ public class ShooterWorm : Unit
 {
 	[SerializeField] private float baseShootTime = 7;
 	[SerializeField] private GameObject projectile;
+	[SerializeField] private GameObject shootSFX;
 
 	private new void Start()
 	{
@@ -19,6 +20,7 @@ public class ShooterWorm : Unit
 		while (true)
 		{
 			Instantiate(projectile, transform.position, Quaternion.identity);
+			Instantiate(shootSFX, transform.position, Quaternion.identity);
 			yield return new WaitForSeconds(baseShootTime);
 		}
 	}

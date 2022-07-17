@@ -122,10 +122,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   showStrength: 1
+  splat: {fileID: 9087598328088165346, guid: dced79c8538dbb84391410d74357b69a, type: 3}
+  place: {fileID: 9087598328088165346, guid: 974277aa595603b4a800680a9a58efd6, type: 3}
+  fortify: {fileID: 9087598328088165346, guid: ce1470d91768d414caa31538b49e7e82, type: 3}
   explosion: {fileID: 4119670903897345408, guid: 74192f911d485cf4596022ba796b11ed, type: 3}
   projDestroyers:
     serializedVersion: 2
     m_Bits: 64
+  explodeSFX: {fileID: 9087598328088165346, guid: 1c0d394c867507e4c85d406b0166eb16, type: 3}
 --- !u!61 &7504762237584989827
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ public class GoopSnail : Unit
 {
 	[SerializeField] private float baseShootTime = 12;
 	[SerializeField] private GameObject projectile;
+	[SerializeField] private GameObject shootSFX;
 
 	private new void Start()
 	{
@@ -19,6 +20,7 @@ public class GoopSnail : Unit
 		while (true)
 		{
 			Instantiate(projectile, transform.position, Quaternion.identity);
+			Instantiate(shootSFX, transform.position, Quaternion.identity);
 			yield return new WaitForSeconds(baseShootTime);
 		}
 	}

@@ -122,6 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 5
   showStrength: 1
+  splat: {fileID: 9087598328088165346, guid: dced79c8538dbb84391410d74357b69a, type: 3}
+  place: {fileID: 9087598328088165346, guid: 974277aa595603b4a800680a9a58efd6, type: 3}
+  fortify: {fileID: 9087598328088165346, guid: ce1470d91768d414caa31538b49e7e82, type: 3}
   produceTime: 8
   addTimeBase: 1
 --- !u!61 &7223285603492685606

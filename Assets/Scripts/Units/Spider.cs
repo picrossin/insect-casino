@@ -5,6 +5,7 @@ public class Spider : Unit
 {
 	[SerializeField] private float baseShootTime = 12;
 	[SerializeField] private GameObject web;
+	[SerializeField] private GameObject webSFX;
 
 	private Vector2Int[] _webPattern1 =
 	{
@@ -82,8 +83,10 @@ public class Spider : Unit
 		
 		while (true)
 		{
+			Instantiate(webSFX, transform.position, Quaternion.identity);
+			
 			Vector3Int tilePos = GameManager.Instance.TileGrid.WorldToCell(transform.position);
-
+			
 			if (_strength < 2)
 			{
 				foreach (Vector2Int pos in _webPattern1)

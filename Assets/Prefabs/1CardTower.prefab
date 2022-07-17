@@ -101,6 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   showStrength: 1
+  splat: {fileID: 9087598328088165346, guid: dced79c8538dbb84391410d74357b69a, type: 3}
+  place: {fileID: 9087598328088165346, guid: beb469f793b3a404aacc866f8adddc1b, type: 3}
+  fortify: {fileID: 9087598328088165346, guid: ce1470d91768d414caa31538b49e7e82, type: 3}
   sprites:
   - {fileID: 1609328591, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}
   - {fileID: -841525916, guid: 881060ad6ce4a344ba57e748bb2e869f, type: 3}

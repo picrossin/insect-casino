@@ -122,8 +122,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   showStrength: 1
+  splat: {fileID: 9087598328088165346, guid: dced79c8538dbb84391410d74357b69a, type: 3}
+  place: {fileID: 9087598328088165346, guid: 974277aa595603b4a800680a9a58efd6, type: 3}
+  fortify: {fileID: 9087598328088165346, guid: ce1470d91768d414caa31538b49e7e82, type: 3}
   baseShootTime: 7
   projectile: {fileID: 8675985323126510976, guid: b3b0d91e8d9f7df469c44f969f13b8ed, type: 3}
+  shootSFX: {fileID: 9087598328088165346, guid: a9ee976702b7bbf4c90a64228822c3d9, type: 3}
 --- !u!61 &3294633436292783199
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ public class ExplodingAnt : Unit
 {
 	[SerializeField] private GameObject explosion;
 	[SerializeField] private LayerMask projDestroyers;
+	[SerializeField] private GameObject explodeSFX;
 
 	private Vector2Int[] _explodePattern1 =
 	{
@@ -102,6 +103,7 @@ public class ExplodingAnt : Unit
 			Instantiate(explosion, 
 				tilePos + new Vector3(0.5f, 0.813f, 0.0f), 
 				Quaternion.identity);
+			Instantiate(explodeSFX, transform.position, Quaternion.identity);
 			
             if (_strength < 2)
             {

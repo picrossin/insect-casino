@@ -8,6 +8,7 @@ public class DieRoller : MonoBehaviour
     [SerializeField] private LayerMask floorMask;
     [SerializeField] private int dieNum;
     [SerializeField] private Texture glyphTex;
+    [SerializeField] private GameObject rollSFX;
 
     private Rigidbody _rigidbody;
     private bool _spinning;
@@ -35,6 +36,8 @@ public class DieRoller : MonoBehaviour
         _spinning = false;
         _rigidbody.useGravity = true;
         _rigidbody.isKinematic = false;
+
+        Instantiate(rollSFX, transform);
 
         if (glyphs)
         {

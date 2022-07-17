@@ -18,6 +18,9 @@ public class Unit : MonoBehaviour
     public GameManager.UnitType BugType => type;
 
     [SerializeField] private bool showStrength = true;
+    [SerializeField] private GameObject splat;
+    [SerializeField] private GameObject place;
+    [SerializeField] private GameObject fortify;
     
     private GameObject _strengthCanvas;
     private Text _strengthText;
@@ -48,6 +51,7 @@ public class Unit : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && canPlace)
             {
                 GameManager.Instance.GameGrid.InsertUnit(gridPosition, this);
+                Instantiate(place, transform.position, Quaternion.identity);
                 _placing = false;
             }
         }
@@ -78,6 +82,7 @@ public class Unit : MonoBehaviour
     protected virtual IEnumerator AddStrengthAnim(int strengthToAdd)
     {
         _strength += strengthToAdd;
+        Instantiate(fortify, transform.position, Quaternion.identity);
 
         if (_strength > 6)
         {
@@ -97,6 +102,7 @@ public class Unit : MonoBehaviour
     {
         // TODO: Add anim
         GameManager.Instance.GameGrid.RemoveUnit(this);
+        Instantiate(splat, transform.position, Quaternion.identity);
         Destroy(gameObject);
         yield break;
     }

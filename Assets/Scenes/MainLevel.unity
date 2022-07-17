@@ -2228,7 +2228,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1664
+  m_Name: pb_Mesh-18542
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3215,7 +3215,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1680
+  m_Name: pb_Mesh-18558
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4726,8 +4726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bd731183fc9cb4d874fac86eb9ab42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugForceUnitType: 0
-  debugUnitType: 1
+  debugForceUnitType: 1
+  debugUnitType: 6
   units:
   - {fileID: 3610900605576220565, guid: 32d4cec212a9dd941b9decb5f8cd4733, type: 3}
   - {fileID: 3610900605576220565, guid: 4dbd36b64baa55047ad83d40baffa40f, type: 3}
@@ -4761,7 +4761,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5205,6 +5205,7 @@ GameObject:
   - component: {fileID: 1174080701}
   - component: {fileID: 1174080700}
   - component: {fileID: 1174080699}
+  - component: {fileID: 1174080702}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -5327,6 +5328,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174080697}
   m_CullTransparentMesh: 1
+--- !u!114 &1174080702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174080697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47e4cc7010aad34eb735c9a095acfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 9087598328088165346, guid: 787be1c023da50e44b5f7949ad4569c1, type: 3}
+  hover: {fileID: 9087598328088165346, guid: 4ab1dfdda5a6cfa4791ce2f21a1dc4a5, type: 3}
 --- !u!1 &1178724758
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,6 +5437,7 @@ MonoBehaviour:
   die1Loading: {fileID: 1914382158}
   die2Loading: {fileID: 989477556}
   die3Loading: {fileID: 1742553983}
+  sfx: {fileID: 9087598328088165346, guid: 28e0d072ab4c624478a618acf74e2b11, type: 3}
 --- !u!1 &1240687752
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,6 +6076,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 874506044846311410, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
+      propertyPath: rollSFX
+      value: 
+      objectReference: {fileID: 9087598328088165346, guid: 00485c87cc6a5a4429c4bcd920e4fc66, type: 3}
+    - target: {fileID: 874506044846311410, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: glyphTex
       value: 
       objectReference: {fileID: 2800000, guid: 503f22aa81e39d043af4f0929e4df032, type: 3}
@@ -6085,7 +6105,7 @@ PrefabInstance:
       objectReference: {fileID: 289156645}
     - target: {fileID: 8893664058824832463, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1096
+      value: 1108
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
@@ -6777,6 +6797,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 874506044846311410, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
+      propertyPath: rollSFX
+      value: 
+      objectReference: {fileID: 9087598328088165346, guid: 00485c87cc6a5a4429c4bcd920e4fc66, type: 3}
+    - target: {fileID: 874506044846311410, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: glyphTex
       value: 
       objectReference: {fileID: 2800000, guid: 503f22aa81e39d043af4f0929e4df032, type: 3}
@@ -6802,7 +6826,7 @@ PrefabInstance:
       objectReference: {fileID: 538192800}
     - target: {fileID: 8893664058824832463, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1096
+      value: 1108
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
@@ -7397,7 +7421,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1752
+  m_Name: pb_Mesh-18630
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8244,6 +8268,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 874506044846311410, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
+      propertyPath: rollSFX
+      value: 
+      objectReference: {fileID: 9087598328088165346, guid: 00485c87cc6a5a4429c4bcd920e4fc66, type: 3}
+    - target: {fileID: 874506044846311410, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: glyphTex
       value: 
       objectReference: {fileID: 2800000, guid: 503f22aa81e39d043af4f0929e4df032, type: 3}
@@ -8269,7 +8297,7 @@ PrefabInstance:
       objectReference: {fileID: 1603434784}
     - target: {fileID: 8893664058824832463, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1096
+      value: 1108
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb73840b90d4ddb429fe989111a4b12d, type: 3}
@@ -8296,6 +8324,7 @@ GameObject:
   - component: {fileID: 1911776821}
   - component: {fileID: 1911776820}
   - component: {fileID: 1911776819}
+  - component: {fileID: 1911776822}
   m_Layer: 5
   m_Name: SendScore
   m_TagString: Untagged
@@ -8418,6 +8447,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911776817}
   m_CullTransparentMesh: 1
+--- !u!114 &1911776822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911776817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47e4cc7010aad34eb735c9a095acfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 9087598328088165346, guid: 787be1c023da50e44b5f7949ad4569c1, type: 3}
+  hover: {fileID: 9087598328088165346, guid: 4ab1dfdda5a6cfa4791ce2f21a1dc4a5, type: 3}
 --- !u!1 &1914382156
 GameObject:
   m_ObjectHideFlags: 0

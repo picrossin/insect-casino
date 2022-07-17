@@ -6,6 +6,7 @@ public class DieUIManager : MonoBehaviour
     [SerializeField] private Image die1Loading;
     [SerializeField] private Image die2Loading;
     [SerializeField] private Image die3Loading;
+    [SerializeField] private GameObject sfx;
     
     private bool _die1Spawned;
     private bool _die2Spawned;
@@ -23,18 +24,21 @@ public class DieUIManager : MonoBehaviour
             {
                 _die1Spawned = true;
                 transform.Find("Die 1").gameObject.SetActive(true);
+                Instantiate(sfx);
                 GameManager.Instance.DieReady = false;
             }
             else if (!_die2Spawned)
             {
                 _die2Spawned = true;
                 transform.Find("Die 2").gameObject.SetActive(true);
+                Instantiate(sfx);
                 GameManager.Instance.DieReady = false;
             }
             else if (!_die3Spawned)
             {
                 _die3Spawned = true;
                 transform.Find("Die 3").gameObject.SetActive(true);
+                Instantiate(sfx);
                 GameManager.Instance.DieReady = false;
             }
         }
