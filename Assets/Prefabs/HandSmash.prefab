@@ -4893,5 +4893,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.25
-  intensity: 1
+  intensity: 0.25
   timeUntilDestroy: 3

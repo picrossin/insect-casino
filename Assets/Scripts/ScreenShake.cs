@@ -18,7 +18,6 @@ public class ScreenShake : MonoBehaviour
 
     public void Shake(float intensity, float duration)
     {
-        return;
         StartCoroutine(ShakeAnim(intensity, duration));
     }
 

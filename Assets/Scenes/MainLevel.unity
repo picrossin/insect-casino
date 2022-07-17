@@ -5682,7 +5682,7 @@ MonoBehaviour:
   - {fileID: 3610900605576220565, guid: 56d15871bb76d4740a89b955c86f6376, type: 3}
   - {fileID: 3610900605576220565, guid: 961bd9da990396646b80acf2764b88cf, type: 3}
   - {fileID: 3610900605576220565, guid: 88144b1456abc9743bd09accccc452a3, type: 3}
-  produceTime: 4
+  produceTime: 3.5
   dieUIManager: {fileID: 1178724762}
   hands:
   - {fileID: 5703435096521864650, guid: 6f89db6d1acd126489aafa1ad44579e9, type: 3}
