@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,7 +35,7 @@ public class Unit : MonoBehaviour
 
     private SpriteRenderer _sprite;
     private GameObject _strengthCanvas;
-    private Text _strengthText;
+    private TextMeshProUGUI _strengthText;
     private StrengthBar _strengthBar;
     protected bool _strengthening;
     private Tween _jiggle;
@@ -44,7 +45,7 @@ public class Unit : MonoBehaviour
     {
         _sprite = GetComponent<SpriteRenderer>();
         _strengthCanvas = transform.Find("HealthCanvas").gameObject;
-        _strengthText = _strengthCanvas.GetComponentInChildren<Text>();
+        _strengthText = _strengthCanvas.GetComponentInChildren<TextMeshProUGUI>();
         _strengthBar = _strengthCanvas.GetComponentInChildren<StrengthBar>();
         _coll = GetComponent<BoxCollider2D>();
     }

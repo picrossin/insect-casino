@@ -116,10 +116,11 @@ public class GameManager : MonoBehaviour
     private bool _choosing;
     public bool Choosing => _choosing;
 
+    
     private float _handWaitTime = 10f;
     private List<Chips> _chipTargets = new List<Chips>();
     private HashSet<Chips> _chipPiles = new HashSet<Chips>();
-    private Text _scoreText;
+    private TextMeshProUGUI _scoreText;
     private AudioSource _music;
     private float _score;
     private bool _gameInitialized;
@@ -131,7 +132,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
-        _scoreText = gameUI.transform.Find("ScoreText").GetComponent<Text>();
+        _scoreText = gameUI.transform.Find("ScoreText").GetComponent<TextMeshProUGUI>();
         _music = GetComponent<AudioSource>();
         
         _state = GameState.Normal;
@@ -246,7 +247,7 @@ public class GameManager : MonoBehaviour
 
     public void ReturnChipPile(Chips chipPile)
     {
-        if (chipPile != null)
+        if (chipPile != null && !_chipTargets.Contains(chipPile))
         {
             _chipTargets.Add(chipPile);
         }
@@ -361,7 +362,7 @@ public class GameManager : MonoBehaviour
                 _availableHandAngles.Remove(angle);
                 Hand hand = Instantiate(hands[Random.Range(0, hands.Length)], goal.transform.position, Quaternion.identity).GetComponent<Hand>();
                 hand.ChipGoal = goal;
-                hand.ReachSpeedModifier = Mathf.Floor(_score / 50f) * .0075f;
+                hand.ReachSpeedModifier += Mathf.Floor(_score / 50f) * .0075f;
                 hand.Angle = angle;
                 _handsInPlay.Add(hand);
             }

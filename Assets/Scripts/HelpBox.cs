@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HelpBox : MonoBehaviour
 {
     [SerializeField] private Image image;
-    [SerializeField] private Text text;
+    [SerializeField] private TextMeshProUGUI text;
     private Animation _anim;
 
     private void Start()

@@ -93,32 +93,32 @@ public class DieRoller : MonoBehaviour
 
     public int GetDieSide()
     {
-        if (Physics.Raycast(transform.position, transform.up, transform.localScale.x * 1.1f, floorMask))
+        if (Physics.Raycast(transform.position, transform.up, transform.localScale.x * 2f, floorMask))
         {
             return 6;
         }
         
-        if (Physics.Raycast(transform.position, -transform.up, transform.localScale.x * 1.1f, floorMask))
+        if (Physics.Raycast(transform.position, -transform.up, transform.localScale.x * 2f, floorMask))
         {
             return 1;
         }
         
-        if (Physics.Raycast(transform.position, -transform.right, transform.localScale.x * 1.1f, floorMask))
+        if (Physics.Raycast(transform.position, -transform.right, transform.localScale.x * 2f, floorMask))
         {
             return 5;
         }
         
-        if (Physics.Raycast(transform.position, transform.right, transform.localScale.x * 1.1f, floorMask))
+        if (Physics.Raycast(transform.position, transform.right, transform.localScale.x * 2f, floorMask))
         {
             return 2;
         }
         
-        if (Physics.Raycast(transform.position, transform.forward, transform.localScale.x * 1.1f, floorMask))
+        if (Physics.Raycast(transform.position, transform.forward, transform.localScale.x * 2f, floorMask))
         {
             return 3;
         }
         
-        if (Physics.Raycast(transform.position, -transform.forward, transform.localScale.x * 1.1f, floorMask))
+        if (Physics.Raycast(transform.position, -transform.forward, transform.localScale.x * 2f, floorMask))
         {
             return 4;
         }

@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -63,6 +64,7 @@ public class Hand : MonoBehaviour
 	private StrengthBar _healthBar;
 	private int _health = 6;
 	private bool _attacked;
+	private bool _returnedChips;
 
 	private void Start()
 	{
@@ -184,8 +186,9 @@ public class Hand : MonoBehaviour
 				}
 				break;
 			case HandState.Grabbing:
-				if (_chipGoal.TakeChip())
+				if (_chipGoal.TakeChip() && !_returnedChips)
 				{
+					_returnedChips = true;
 					GameManager.Instance.
 						ReturnChipPile(_chipGoal);
 				}
@@ -212,14 +215,18 @@ public class Hand : MonoBehaviour
 		_state = HandState.Hurting;
 		_health = Mathf.Max(_health - dmg, 0);
 		_queueDamage = 0;
-		_healthCanvas.Find("HealthText").GetComponent<Text>().text = $"{_health}/6";
+		_healthCanvas.Find("HealthText").GetComponent<TextMeshProUGUI>().text = $"{_health}/6";
 		_healthBar.SetStrength(_health);
 		Instantiate(smash, transform.position, Quaternion.identity);
 		yield return new WaitForSeconds(0.25f);
 
 		if (_health <= 0)
 		{
-			GameManager.Instance.ReturnChipPile(_chipGoal);
+			if (!_returnedChips)
+			{
+				_returnedChips = true;
+				GameManager.Instance.ReturnChipPile(_chipGoal);
+			}
 			GameManager.Instance.HandsInPlay.Remove(this);
 			GameManager.Instance.AvailableHandAngles.Add(_angle);
 			_healthCanvas.gameObject.SetActive(false);
@@ -267,7 +274,7 @@ public class Hand : MonoBehaviour
 		}
 		else
 		{
-			if (unitToAttack.BugType != GameManager.UnitType.Cards)
+			if (unitToAttack.BugType != GameManager.UnitType.Cards && unitToAttack != null)
 			{
 				unitToAttack.Die();
 			}
@@ -277,13 +284,17 @@ public class Hand : MonoBehaviour
 				{
 					// _attacked = false;
 				}
-			
-				GameManager.Instance.ReturnChipPile(_chipGoal);
-				GameManager.Instance.HandsInPlay.Remove(this);
-				GameManager.Instance.AvailableHandAngles.Add(_angle);
-				_healthCanvas.gameObject.SetActive(false);
-				retract = true;
 			}
+			
+			if (!_returnedChips)
+			{
+				_returnedChips = true;
+				GameManager.Instance.ReturnChipPile(_chipGoal);
+			}
+			GameManager.Instance.HandsInPlay.Remove(this);
+			GameManager.Instance.AvailableHandAngles.Add(_angle);
+			_healthCanvas.gameObject.SetActive(false);
+			retract = true;
 		}
 		
 		
